@@ -164,7 +164,7 @@ $('#smat').mouseleave(function() {
 	
 	
 	// colorbox	
-	$(".inline").colorbox({inline:true, width:"50%"});
+	$(".inline").colorbox({inline:true, width:"90%"});
 	
 	
 	

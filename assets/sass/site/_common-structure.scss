@@ -151,71 +151,94 @@ a:hover {
 	margin-top: 5px;
 }
 #top-buttons {
-	width: 350px;
+	width: 90%;
 	position: relative;
-	float: right;
+	margin: 0 auto;
 	z-index: 6;	
 	@media screen and (min-width: $tabwidth) {
-	
+		width: 350px;
+		float: right;
+		margin: 0;
 	}
 	@media screen and (min-width: $deskwidth) {
 		
 	}
+	ul {
+		margin: 0px;
+		padding: 0px;
+		list-style-type: none;
+		z-index: 2;
+		position: relative;
+
+	}
+	li {
+		
+		position: relative;
+		margin: 0px;
+		width:45%;
+		@media screen and (min-width: $tabwidth) {
+			width: auto;
+		}
+	}
+	li.smat, li.mhpc {float: left;}
+	li.member {
+		float: right;
+		@media screen and (min-width: $tabwidth) {
+			float: left;
+		}
+	}
+	a {
+		text-decoration: none;
+		width: 100%;
+		background-color: rgba($color-green,1);
+		display: block;
+		padding: 15px 10px;
+		color: #fff;
+		font-size: 12px;
+		text-align: center;
+		position: relative;
+		@media screen and (min-width: $tabwidth) {
+			background-image: url(images/top-buttons.png);
+			background-repeat: no-repeat;
+			background-color: rgba($color-green,0);
+			text-indent: -9000px;
+			height: 44px;
+			display: inline-block;
+			padding: 0;
+		}
+	}
+	.smat a {
+		background-position: -0px -0px;
+		position: relative;
+		@media screen and (min-width: $tabwidth) {
+			width:175px;
+		}
+		&:hover {
+			background-position: -0px -5px;
+		}
+	}
+	.mhpc a {
+		background-position: -0px -50px;
+		position: relative;
+		@media screen and (min-width: $tabwidth) {
+			width:175px;
+		}
+		&:hover {
+			background-position: -0px -55px;
+		}
+	}
+	.member a {
+		background-position: -175px 0px;
+		position: relative;
+		@media screen and (min-width: $tabwidth) {
+			width:175px;
+		}
+		&:hover {
+			background-position: -175px -5px;
+		}
+	}
 }
 
-#top-buttons  ul {
-	margin: 0px;
-	padding: 0px;
-	list-style-type: none;
-	z-index: 2;
-	position: relative;
-
-}
-#top-buttons  ul li {
-	float: left;
-	position: relative;
-	margin: 0px;
-}
-#top-buttons  ul a {
-	
-	text-decoration: none;
-	background-image: url(images/top-buttons.png);
-	background-repeat: no-repeat;
-	display: inline-block;
-	height: 44px;
-	text-indent: -9000px;
-	position: relative;
-}
-#top-buttons  .smat a {
-	width:175px;
-	background-position: -0px -0px;
-	position: relative;
-	
-}
-#top-buttons .smat a:hover {
-	background-position: -0px -5px;
-	
-}
-#top-buttons  .mhpc a {
-	width:175px;
-	background-position: -0px -50px;
-	position: relative;
-	
-}
-#top-buttons  .mhpc a:hover {
-	background-position: -0px -55px;
-	
-}
-#top-buttons  .member a {
-	width:175px;
-	background-position: -175px 0px;
-	position: relative;
-	
-}
-#top-buttons  .member a:hover {
-	background-position: -175px -5px;
-	
-}
 #alert {
 	width: 100%;
 	background-color: #F92F3E;
