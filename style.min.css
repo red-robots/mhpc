@@ -1734,14 +1734,14 @@ h1.newsevents{width:100%}
 @media screen and (min-width:1200px){.events-page-content{width:820px}
 }.events-left{width:100%;margin:80px 20px 0 0;float:left}
 @media screen and (min-width:1200px){.events-left{width:200px}
-}.page-left-tools{width:350px;float:left;margin:30px 0 30px 0;padding-bottom:30px}
-@media screen and (min-width:600px){.page-left-tools{border-right:1px solid #ccc}
-}@media screen and (min-width:1200px){.page-left-tools{width:350px}
+}.page-left-tools{width:100%;float:left;margin:20px auto;padding-bottom:30px}
+@media screen and (min-width:600px){.page-left-tools{border-right:1px solid #ccc;width:30%}
+}@media screen and (min-width:1200px){.page-left-tools{margin:30px 0 30px 0}
 }.page-left-tools h3{color:#0a8691;margin-bottom:20px}
 .page-left-tools ul{margin:10px 0 20px 0}
 .page-left-tools li{margin:0 0 10px 0}
 .page-right-tools{width:100%;float:right}
-@media screen and (min-width:1200px){.page-right-tools{width:650px}
+@media screen and (min-width:600px){.page-right-tools{width:60%}
 }.blog .format-aside .entry-title,.archive .format-aside .entry-title{display:none}
 .comment-content a{word-wrap:break-word}
 .bypostauthor{display:block}
