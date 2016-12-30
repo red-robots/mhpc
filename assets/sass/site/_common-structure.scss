@@ -65,7 +65,7 @@ a:hover {
 /* Page structure */
 
 #main {
-	width: 100%;
+	width: 90%;
 	margin: 0px auto;
 	overflow: hidden;
 	padding: 0px 20px;
@@ -292,9 +292,7 @@ h1.logo-smat,
 	}
 }
 .logo,
- h1.logo, 
- .logo-smat, 
- h1.logo-smat {
+ h1.logo{
 	// width: 344px;
 	// height: 140px;
 	margin: 10px auto;
@@ -308,6 +306,22 @@ h1.logo-smat,
 	@media screen and (min-width: $deskwidth) {
 		// width: 344px;
 		// height: 140px;
+	}
+	
+}
+
+ .logo-smat, 
+ h1.logo-smat {
+	margin: 10px auto;
+	width: 280px;
+	height: 114px;
+	z-index: 1;
+	
+	@media screen and (min-width: $tabwidth) {
+	
+	}
+	@media screen and (min-width: $deskwidth) {
+
 	}
 	
 }
@@ -329,9 +343,9 @@ h1.logo-smat,
 .logo-smat, .logo-mhpc {
 	width: 120px;
 	height: 49px;
-	float: left;
+	
 	z-index: 1;
-	margin-top: 10px;
+	margin: 10px auto;
 	text-indent: -9000px;
 	@media screen and (min-width: $tabwidth) {
 		width: 280px;

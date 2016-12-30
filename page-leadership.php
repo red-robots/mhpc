@@ -49,7 +49,7 @@ $size =  'profile';
 
 
 
-<div class="blog-square <?php echo $term->slug; ?> js-blocks">
+<div class="blog-square <?php echo $term->slug; ?>">
 
 	<div class="leadership-picture">
 		<?php if(get_field('picture')!="") { ?>
@@ -58,16 +58,17 @@ $size =  'profile';
 	    <?php } else { ?>
 	    	<img src="<?php bloginfo('template_url'); ?>/images/profile.png" />
 	    <?php } ?>
+	    <div class="leadership-name"><?php the_title(); ?></div>
+		<div class="leadership-title"><?php the_field('title'); ?></div>
 	</div><!-- leadership picture -->
 
-	<div class="leadership-name"><?php the_title(); ?></div>
-	<div class="leadership-title"><?php the_field('title'); ?></div>
+	
 	<div class="leadership-bio">
 		<?php the_field('bio'); ?>
 
 	</div>
 
-<div class="read-bio">Read More</div>
+<!-- <div class="read-bio">Read More</div> -->
 </div><!-- blog square  -->
 
 
@@ -121,11 +122,12 @@ $size =  'profile';
     <?php } else { ?>
     	<img src="<?php bloginfo('template_url'); ?>/images/profile.png" />
     <?php } ?>
+    <div class="leadership-name"><?php the_title(); ?></div>
+	<div class="leadership-title"><?php the_field('title'); ?></div>
 </div><!-- leadership picture -->
-<div class="leadership-name"><?php the_title(); ?></div>
-<div class="leadership-title"><?php the_field('title'); ?></div>
+
 <div class="leadership-bio"><?php the_field('bio'); ?></div>
-	<div class="read-bio">Read More</div>
+	<!-- <div class="read-bio">Read More</div> -->
 </div><!-- blog square  -->
 <?php endwhile; /*endif;*/ wp_reset_postdata(); ?>
 
