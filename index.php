@@ -20,7 +20,7 @@ get_header(); ?>
                <div id="mhpc">
                <a href="<?php bloginfo('url'); ?>/mhpc">
                	
-                <div class="logo-mhpc">Metrolina Healthcare Preparedness Coalition</div><!-- logo -->
+                <div class="logo-mhpc-front">Metrolina Healthcare Preparedness Coalition</div><!-- logo -->
                 <div class="clear"></div>
                    <div class="entersite-mhpc">ENTER SITE</div><!-- entersite-mhpc -->
                   <div class="clear"></div>
@@ -35,7 +35,7 @@ get_header(); ?>
                <div id="smat">
                <a href="<?php bloginfo('url'); ?>/smat">
                
-              		 <div class="logo-smat">SMAT</div><!-- logo -->
+              		 <div class="logo-smat-front">SMAT</div><!-- logo -->
                      <div class="clear"></div>
                      <div class="entersite-smat">ENTER SITE</div><!-- entersite-mhpc -->
                      <div class="clear"></div>

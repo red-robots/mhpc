@@ -147,9 +147,9 @@ endif;
         <?php if(!is_front_page()) : ?>
         
         <?php if('MHPC' == $WhichSiteAreWeOn) {  // is is mhpc ?>
-        	<h1 class="logo"><a href="<?php bloginfo('url'); ?>/mhpc">Metrolina Preparedness</a></h1>
+        	<div class="logo-mhpc"><a href="<?php bloginfo('url'); ?>/mhpc">Metrolina Preparedness</a></div>
         <?php } elseif('SMAT' == $WhichSiteAreWeOn) {  // if is smat ?>
-        	<h1 class="logo-smat"><a href="<?php bloginfo('url'); ?>/smat">Metrolina Preparedness</a></h1>
+        	<div class="logo-smat"><a href="<?php bloginfo('url'); ?>/smat">Metrolina Preparedness</a></div>
         <?php } ?>
        
         

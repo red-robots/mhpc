@@ -277,24 +277,58 @@ a:hover {
 	
 }
 
-.logo , h1.logo, .logo-mhpc {
+.logo-mhpc,
+.logo-mhpc-front {
 	background: {
 		image: url(images/logo.png);
 		size: cover;
 	}
 }
 .logo-smat, 
-h1.logo-smat, 
-.logo-smat{
+.logo-smat-front 
+{
 	background: {
 		image: url(images/SMAT-logo.png);
 		size: cover
 	}
 }
-.logo,
- h1.logo{
-	// width: 344px;
-	// height: 140px;
+// .logo,
+//  h1.logo{
+// 	// width: 344px;
+// 	// height: 140px;
+// 	margin: 10px auto;
+// 	width: 280px;
+// 	height: 114px;
+// 	z-index: 1;
+	
+// 	@media screen and (min-width: $tabwidth) {
+// 		float: left;
+// 	}
+// 	@media screen and (min-width: $deskwidth) {
+// 		// width: 344px;
+// 		// height: 140px;
+// 	}
+	
+// }
+.logo-mhpc-front, 
+.logo-smat-front {
+	margin: 10px auto;
+	width: 280px;
+	height: 114px;
+	z-index: 1;
+	
+	@media screen and (min-width: $tabwidth) {
+		width: 280px;
+		height: 114px;
+		
+	}
+	@media screen and (min-width: $deskwidth) {
+
+	}
+	
+}
+.logo-smat,
+.logo-mhpc {
 	margin: 10px auto;
 	width: 280px;
 	height: 114px;
@@ -304,33 +338,57 @@ h1.logo-smat,
 		float: left;
 	}
 	@media screen and (min-width: $deskwidth) {
-		// width: 344px;
-		// height: 140px;
+
 	}
 	
 }
-
- .logo-smat, 
- h1.logo-smat {
-	margin: 10px auto;
-	width: 280px;
-	height: 114px;
+// .logo a, h1.logo a{
+// 	width: 280px;
+// 	height: 114px;
+// 	display: block;
+// 	text-indent: -9000px;
+// 	@media screen and (min-width: $tabwidth) {
+// 		width: 280px;
+// 		height: 114px;
+// 	}
+// 	@media screen and (min-width: $deskwidth) {
+// 		width: 344px;
+// 		height: 140px;
+// 	}
+	
+// }
+.logo-smat-front, 
+.logo-mhpc-front {
+	width: 90px;
+	height: 37px;
+	
 	z-index: 1;
-	
+	margin: 10px auto;
+	text-indent: -9000px;
 	@media screen and (min-width: $tabwidth) {
-	
+		width: 120px;
+		height: 49px;
+	}
+	@media screen and (min-width: $midwidth) {
+		width: 280px;
+		height: 114px;
 	}
 	@media screen and (min-width: $deskwidth) {
-
+		width: 344px;
+		height: 140px;
 	}
-	
 }
-.logo a, h1.logo a{
-	width: 280px;
-	height: 114px;
+.logo-smat-front a, 
+.logo-mhpc-front a {
+	width: 90px;
+	height: 37px;
 	display: block;
 	text-indent: -9000px;
 	@media screen and (min-width: $tabwidth) {
+		width: 120px;
+		height: 49px;
+	}
+	@media screen and (min-width: $midwidth) {
 		width: 280px;
 		height: 114px;
 	}
@@ -338,11 +396,11 @@ h1.logo-smat,
 		width: 344px;
 		height: 140px;
 	}
-	
 }
-.logo-smat, .logo-mhpc {
-	width: 120px;
-	height: 49px;
+.logo-smat, 
+.logo-mhpc {
+	width: 280px;
+	height: 114px;
 	
 	z-index: 1;
 	margin: 10px auto;
@@ -356,9 +414,10 @@ h1.logo-smat,
 		height: 140px;
 	}
 }
-.logo-smat a, .logo-mhpc a {
-	width: 120px;
-	height: 49px;
+.logo-smat a, 
+.logo-mhpc a {
+	width: 280px;
+	height: 114px;
 	display: block;
 	text-indent: -9000px;
 	@media screen and (min-width: $tabwidth) {

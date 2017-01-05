@@ -1,5 +1,5 @@
 <div id="table">
-
+<div id="hospitals"></div>
 <?php 
 ###############################
 
@@ -69,6 +69,7 @@ $the_query = new WP_Query( $args );  ?>
 	
     <div class="column">
     <div class="column-header">EMS Agencies</div><!-- column header -->
+    <div id="agencies"></div>
 		<?php while ( $the_query->have_posts() ) : ?>
         <?php  $the_query->the_post(); ?>
                     
@@ -115,6 +116,7 @@ $the_query = new WP_Query( $args );  ?>
 	
     <div class="column">
     <div class="column-header">Emergency Management</div><!-- column header -->
+    <div id="emergency-management"></div>
 		<?php while ( $the_query->have_posts() ) : ?>
         <?php  $the_query->the_post(); ?>
                     
@@ -159,6 +161,7 @@ $the_query = new WP_Query( $args );  ?>
 	
     <div class="column">
     <div class="column-header">Public Health</div><!-- column header -->
+    <div id="public-health"></div>
 		<?php while ( $the_query->have_posts() ) : ?>
         <?php  $the_query->the_post(); ?>
                     

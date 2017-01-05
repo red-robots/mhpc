@@ -21,8 +21,29 @@ get_header(); ?>
                 
             
             <div id="states-container">
-             <div class="map-words-container">
+             <div class="map-words-container-mobile">
+             <h3>Partners</h3>
              <div class="map-words">
+                <ul>
+                    <li>
+                        <a href="#hospitals">Hospitals</a>
+                    </li>
+                    <li>
+                        <a href="#agencies">EMS Agencies</a>
+                    </li>
+                     <li>
+                        <a href="#emergency-management">Emergency Management</a>
+                    </li>
+                    <li>
+                        <a href="#public-health">Public Health</a>
+                    </li>
+                </ul>
+             </div><!-- map words -->
+             
+
+             <h3>Counties</h3>
+             <div class="map-words">
+                
              	<ul>
                 	<li><a class='inline' href="#burke" id="countyburke">Burke</a></li>
                     <li><a class='inline' href="#cleveland" alt="cleveland" >Cleveland</a></li>
@@ -38,6 +59,44 @@ get_header(); ?>
              <div class="map-words">
              	<ul>
                 	<li><a class='inline' href="#cabarrus" alt="cabarrus">Cabarrus</a></li>
+                    <li><a class='inline' href="#union" alt="union" >Union</a></li>
+                    <li><a class='inline' href="#stanly" alt="stanly" >Stanly</a></li>
+                    <li><a class='inline' href="#anson" alt="anson" >Anson</a></li>
+                    <li><a class='inline' href="#richmond" alt="richmond" >Richmond</a></li>
+                    <li><a class='inline' href="#scotland" alt="scotland" >Scotland</a></li>
+                   
+                
+               </ul>
+             </div> <!-- map words -->
+             
+             <div class="clear"></div>
+              <ul>
+              <li>
+                 <a class='inline' href="#other-state-regional-partners" alt="other-state-regional-partners" >
+                      Other State Regional Partners
+                 </a>
+             </li></ul>
+             
+             </div> <!-- map words container mobile -->
+
+
+             <div class="map-words-container">
+             <div class="map-words">
+                <ul>
+                    <li><a class='inline' href="#burke" id="countyburke">Burke</a></li>
+                    <li><a class='inline' href="#cleveland" alt="cleveland" >Cleveland</a></li>
+                    <li><a class='inline' href="#catawba" alt="catawba" >Catawba</a></li>
+                    <li><a class='inline' href="#lincoln" alt="lincoln" >Lincoln</a></li>
+                    <li><a class='inline' href="#gaston" alt="gaston" >Gaston</a></li>
+                    <li><a class='inline' href="#iredell" alt="iredell" >Iredell</a></li>
+                    <li><a class='inline' href="#mecklenburg" alt="mecklenburg" >Mecklenburg</a></li>
+                    
+               </ul>
+             </div><!-- map words -->
+             
+             <div class="map-words">
+                <ul>
+                    <li><a class='inline' href="#cabarrus" alt="cabarrus">Cabarrus</a></li>
                     <li><a class='inline' href="#union" alt="union" >Union</a></li>
                     <li><a class='inline' href="#stanly" alt="stanly" >Stanly</a></li>
                     <li><a class='inline' href="#anson" alt="anson" >Anson</a></li>
