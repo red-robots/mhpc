@@ -196,14 +196,16 @@ endif;
 				<?php wp_nav_menu( array( 
             'theme_location' => 'primary', 
             // 'menu_class' => 'nav-menu',
-            'menu_id' => 'primary-menu-mhpc' 
+            'menu_id' => 'primary-menu-mhpc',
+            'walker' => new description_walker()
         ) ); ?>
            <?php } elseif('SMAT' == $WhichSiteAreWeOn) {  // if is smat ?>
            <button class="menu-toggle" aria-controls="primary-menu-smat" aria-expanded="false"><?php esc_html_e( 'MENU', 'acstarter' ); ?></button>
         		<?php wp_nav_menu( array( 
               'theme_location' => 'smat', 
               // 'menu_class' => 'nav-menu',
-              'menu_id' => 'primary-menu-smat' 
+              'menu_id' => 'primary-menu-smat',
+              'walker' => new description_walker()
              ) ); ?>
         <?php } ?>
 		</nav><!-- #site-navigation -->
