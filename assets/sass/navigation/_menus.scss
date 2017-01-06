@@ -38,7 +38,8 @@
 			@media screen and (min-width: $tabwidth) {
 				position: absolute;
 				top: 2.8em;
-				left: -999em;
+				// left: -999em;
+				display: none;
 				float: left;
 			}
 			@media screen and (min-width: $deskwidth) {
@@ -56,6 +57,7 @@
 				&:hover > ul,
 				&.focus > ul {
 					left: 100%;
+					display: block;
 				}
 			}
 
@@ -94,10 +96,11 @@
 		li:hover > ul,
 		li.focus > ul {
 			left: auto;
+			display: block;
 		}
 	}
 	ul.sub-menu {
-		display: block;
+		// display: block;
 	}
 	li {
 		float: left;

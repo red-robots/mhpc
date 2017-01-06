@@ -24,6 +24,8 @@ $('#smat').mouseleave(function() {
 
 
 
+
+
         $('#location-map area').each(function() {
             var id = $(this).attr('id');
             $(this).mouseover(function() {

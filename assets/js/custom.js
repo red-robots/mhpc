@@ -30,6 +30,13 @@ jQuery(document).ready(function ($) {
 		$(this).removeAttr('height').removeAttr('width').wrap( "<div class='embed-container'></div>" );
  	
  	});
+
+	/*
+	*
+	*	iPad menu support
+	*
+	------------------------------------*/
+ 	$('li.menu-item').attr("onClick","return true");
 	
 	/*
 	*

@@ -1350,16 +1350,15 @@ a:hover,a:active{outline:0}
 .main-navigation ul{display:none;list-style:none;margin:20px 0 0 0;text-indent:0;padding:0;border-top:1px solid #ccc;border-bottom:4px solid #00848e}
 @media screen and (min-width:600px){.main-navigation ul{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-pack:justify;-webkit-justify-content:space-between;-ms-flex-pack:justify;justify-content:space-between}
 }.main-navigation ul ul{margin:0;padding:0;z-index:99999;border-bottom:0 solid #00848e;border-top:0 solid #ccc}
-@media screen and (min-width:600px){.main-navigation ul ul{position:absolute;top:2.8em;left:-999em;float:left}
+@media screen and (min-width:600px){.main-navigation ul ul{position:absolute;top:2.8em;display:none;float:left}
 }.main-navigation ul ul ul{left:-999em;top:0}
 .main-navigation ul ul li{font-size:14px}
-.main-navigation ul ul li:hover>ul,.main-navigation ul ul li.focus>ul{left:100%}
+.main-navigation ul ul li:hover>ul,.main-navigation ul ul li.focus>ul{left:100%;display:block}
 .main-navigation ul ul a{border-bottom:0 solid #ededed;display:block;font-size:14px;line-height:2.181818182;padding:8px 10px;width:100%;white-space:normal}
 @media screen and (min-width:600px){.main-navigation ul ul a{width:180px;background:#00848e;color:#fff}
 }.main-navigation ul ul :hover>a,.main-navigation ul ul .focus>a{font-weight:bold;color:#fff;font-size:14px}
 .main-navigation ul ul a:hover,.main-navigation ul ul a.focus{color:#fff;background-color:#1b9faf}
-.main-navigation ul li:hover>ul,.main-navigation ul li.focus>ul{left:auto}
-.main-navigation ul.sub-menu{display:block}
+.main-navigation ul li:hover>ul,.main-navigation ul li.focus>ul{left:auto;display:block}
 .main-navigation li{float:left;position:relative;display:inline-block;text-decoration:none;font-size:18px;margin:0 0 10px 0;width:100%;text-align:center}
 @media screen and (min-width:600px){.main-navigation li{width:auto;text-align:left;font-size:14px;margin:0 4px 0 4px}
 }@media screen and (min-width:1200px){.main-navigation li{font-size:18px;margin:0 8px 0 8px}

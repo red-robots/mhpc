@@ -197,7 +197,7 @@ endif;
             'theme_location' => 'primary', 
             // 'menu_class' => 'nav-menu',
             'menu_id' => 'primary-menu-mhpc',
-            'walker' => new description_walker()
+            // 'walker' => new description_walker()
         ) ); ?>
            <?php } elseif('SMAT' == $WhichSiteAreWeOn) {  // if is smat ?>
            <button class="menu-toggle" aria-controls="primary-menu-smat" aria-expanded="false"><?php esc_html_e( 'MENU', 'acstarter' ); ?></button>
@@ -205,7 +205,7 @@ endif;
               'theme_location' => 'smat', 
               // 'menu_class' => 'nav-menu',
               'menu_id' => 'primary-menu-smat',
-              'walker' => new description_walker()
+              // 'walker' => new description_walker()
              ) ); ?>
         <?php } ?>
 		</nav><!-- #site-navigation -->
