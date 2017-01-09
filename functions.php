@@ -61,7 +61,10 @@
 add_action('init', 'ineedmyjava');
 
 
-
+/* Adds an Options page to your Dashboard */
+if( function_exists('acf_add_options_page') ) {
+    acf_add_options_page();
+}
 /*
 
 	Custom client login, link and title.
