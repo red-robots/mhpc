@@ -154,9 +154,9 @@ $statusMED[] = array('name' => 'Satellite Trailer', 'availability' => $availabil
 
 		<div class="status-wrap">
 			<div class="status-row mobile-header">
-				<div class="resource">Resource</div>
-				<div class="availability">Availability</div>
-				<div class="notes">On Call?</div>
+				<div class="resource">Staff</div>
+				<div class="availability"></div>
+				<div class="notes"></div>
 			</div>
 
 			<?php foreach( $statusStaff as $info ) : 

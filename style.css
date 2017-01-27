@@ -7596,7 +7596,7 @@ h1.newsevents {
     width: 98%; }
     @media screen and (min-width: 600px) {
       .status-row .notes {
-        width: 40%; } }
+        width: 50%; } }
   .status-row .green {
     background-color: lime; }
   .status-row .orange {

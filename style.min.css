@@ -1770,7 +1770,7 @@ h1.newsevents{width:100%}
 }.status-row .availability{width:98%}
 @media screen and (min-width:600px){.status-row .availability{width:25%}
 }.status-row .notes{width:98%}
-@media screen and (min-width:600px){.status-row .notes{width:40%}
+@media screen and (min-width:600px){.status-row .notes{width:50%}
 }.status-row .green{background-color:lime}
 .status-row .orange{background-color:orange}
 .status-row .red{background-color:red}
