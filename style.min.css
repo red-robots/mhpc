@@ -1756,7 +1756,26 @@ h1.newsevents{width:100%}
 .page-left-tools li{margin:0 0 10px 0}
 .page-right-tools{width:100%;float:right}
 @media screen and (min-width:600px){.page-right-tools{width:60%}
-}.blog .format-aside .entry-title,.archive .format-aside .entry-title{display:none}
+}.status-wrap{border:1px solid #ccc;width:100%;float:left;margin:0 0 30px 0}
+.oncall{color:#00f}
+.status-row{width:100%;float:left;border:1px solid #ccc}
+@media screen and (min-width:600px){.status-row{border:0;border:0 solid #ccc}
+}.status-row.mobile-header{display:none}
+@media screen and (min-width:600px){.status-row.mobile-header{display:block;font-weight:bold}
+}.status-row .resource,.status-row .availability,.status-row .notes{padding:1%;float:left}
+.status-row .resource p,.status-row .availability p,.status-row .notes p{margin:0}
+@media screen and (min-width:600px){.status-row .resource,.status-row .availability,.status-row .notes{border:1px solid #ccc}
+}.status-row .resource{width:98%}
+@media screen and (min-width:600px){.status-row .resource{width:25%}
+}.status-row .availability{width:98%}
+@media screen and (min-width:600px){.status-row .availability{width:25%}
+}.status-row .notes{width:98%}
+@media screen and (min-width:600px){.status-row .notes{width:40%}
+}.status-row .green{background-color:lime}
+.status-row .orange{background-color:orange}
+.status-row .red{background-color:red}
+.status-row .yellow{background-color:yellow}
+.blog .format-aside .entry-title,.archive .format-aside .entry-title{display:none}
 .comment-content a{word-wrap:break-word}
 .bypostauthor{display:block}
 .infinite-scroll .posts-navigation,.infinite-scroll.neverending .site-footer{display:none}

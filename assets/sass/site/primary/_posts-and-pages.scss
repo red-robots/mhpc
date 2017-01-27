@@ -1339,3 +1339,69 @@ h1.newsevents {
 		// width: 580px; 
 	}
 }
+.status-wrap {
+	border: 1px solid #ccc;
+	width: 100%;
+	float: left;
+	margin: 0 0 30px 0;
+}
+.oncall {
+	color: #00f;
+}
+.status-row {
+	width: 100%;
+	float: left;
+	border: 1px solid #ccc;
+	@media screen and (min-width: $tabwidth) {
+		border: 0;
+		border: 0px solid #ccc;
+	}
+	&.mobile-header {
+		display: none;
+		@media screen and (min-width: $tabwidth) {
+			display: block;
+			font-weight: bold;
+		}
+	}
+
+	.resource, .availability, .notes {
+		padding: 1%;
+		float: left;
+		
+		p {margin: 0;}
+		@media screen and (min-width: $tabwidth) {
+			border: 1px solid #ccc;
+		}
+	}
+
+	.resource {
+		width: 98%;
+		@media screen and (min-width: $tabwidth) {
+			width: 25%;
+		}
+	}
+	.availability {
+		width: 98%;
+		@media screen and (min-width: $tabwidth) {
+			width: 25%;
+		}
+	}
+	.notes {
+		width: 98%;
+		@media screen and (min-width: $tabwidth) {
+			width: 40%;
+		}
+	}
+	.green {
+		background-color: rgb(0,255,0);
+	}
+	.orange {
+		background-color: rgb(255,165,0);
+	}
+	.red {
+		background-color: rgb(255,0,0);
+	}
+	.yellow {
+		background-color: rgb(255,255,0);
+	}
+}
