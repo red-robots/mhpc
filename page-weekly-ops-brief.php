@@ -234,9 +234,11 @@ $statusMED[] = array('name' => 'Satellite Trailer', 'availability' => $availabil
 					$days = $info['days']; 
 					// $comma_separated = implode(', ',$days);
 					// echo $comma_separated;
-					foreach ($days as $day) {
-						echo '<li>' . $day . '</li>';
-					}
+					if($days):
+						foreach ($days as $day) {
+							echo '<li>' . $day . '</li>';
+						}
+					endif;
 
 					?>
 					</div>
