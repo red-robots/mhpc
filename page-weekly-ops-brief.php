@@ -228,7 +228,7 @@ $statusMED[] = array('name' => 'Satellite Trailer', 'availability' => $availabil
 				<div class="status-row">
 					<div class="resource js-blocks"><?php echo $info['name']; ?></div>
 					<div class="availability js-blocks <?php echo $class; ?>"><?php echo $info['availability']; ?></div>
-					<div class="days js-blocks <?php echo $class; ?>">
+					<div class="days js-blocks <?php //echo $class; ?>">
 					<?php 
 					// Loop through the days array
 					$days = $info['days']; 
