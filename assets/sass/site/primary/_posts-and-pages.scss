@@ -1340,7 +1340,7 @@ h1.newsevents {
 	}
 }
 .status-wrap {
-	border: 1px solid #ccc;
+	border: 1px solid #9a9898;
 	width: 100%;
 	float: left;
 	margin: 0 0 30px 0;
@@ -1351,10 +1351,10 @@ h1.newsevents {
 .status-row {
 	width: 100%;
 	float: left;
-	border: 1px solid #ccc;
+	border: 1px solid #9a9898;
 	@media screen and (min-width: $tabwidth) {
 		border: 0;
-		border: 0px solid #ccc;
+		border: 0px solid #9a9898;
 	}
 	&.mobile-header {
 		display: none;
@@ -1364,13 +1364,13 @@ h1.newsevents {
 		}
 	}
 
-	.resource, .availability, .notes {
+	.resource, .availability, .notes, .days, .notes-equip  {
 		padding: 1%;
 		float: left;
 		
 		p {margin: 0;}
 		@media screen and (min-width: $tabwidth) {
-			border: 1px solid #ccc;
+			border: 1px solid #9a9898;
 		}
 	}
 
@@ -1386,7 +1386,24 @@ h1.newsevents {
 			width: 25%;
 		}
 	}
+	.days {
+		width: 98%;
+		@media screen and (min-width: $tabwidth) {
+			width: 20%;
+		}
+		li {
+			margin: 0;
+			padding: 0;
+			list-style: none;
+		}
+	}
 	.notes {
+		width: 98%;
+		@media screen and (min-width: $tabwidth) {
+			width: 30%;
+		}
+	}
+	.notes-equip {
 		width: 98%;
 		@media screen and (min-width: $tabwidth) {
 			width: 50%;

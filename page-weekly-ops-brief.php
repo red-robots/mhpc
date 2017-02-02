@@ -11,24 +11,64 @@ $statusSMAT = array();
 $statusMED = array();
 $statusStaff = array();
 
-$available_travis_c = get_field('available_travis_c');
+// Staff
+$available_travis_c = get_field_object('available_travis_c');
+$value = $available_travis_c['value'];
+$label = $available_travis_c['choices'][ $value ];
 $on_call = get_field('on_call');
-$statusStaff[] = array('name' => 'Travis Cryan', 'availability' => $available_travis_c, 'oncall' => $on_call );
+$days_available_travis_c = get_field('days_available_travis_c');
+$statusStaff[] = array(
+	'name' => 'Travis Cryan', 
+	'availabilityClass' => $value, 
+	'availability' => $label, 
+	'oncall' => $on_call, 
+	'days' => $days_available_travis_c );
 
-$available_hannah_g = get_field('available_hannah_g');
+// echo '<pre>';
+// print_r($available_travis_c);
+// echo '</pre>';
+
+$available_hannah_g = get_field_object('available_hannah_g');
+$value = $available_hannah_g['value'];
+$label = $available_hannah_g['choices'][ $value ];
 $on_call_hannah_g = get_field('on_call_hannah_g');
-$statusStaff[] = array('name' => 'Hannah Gompers', 'availability' => $available_hannah_g, 'oncall' => $on_call_hannah_g );
+$days_available_hannah_g = get_field('days_available_hannah_g');
+$statusStaff[] = array(
+	'name' => 'Hannah Gompers', 
+	'availabilityClass' => $value, 
+	'availability' => $label, 
+	'oncall' => $on_call_hannah_g, 
+	'days' => $days_available_hannah_g );
 
-$available_scott_h = get_field('available_scott_h');
+$available_scott_h = get_field_object('available_scott_h');
+$value = $available_scott_h['value'];
+$label = $available_scott_h['choices'][ $value ];
 $on_call_scott_h = get_field('on_call_scott_h');
-$statusStaff[] = array('name' => 'Scott Hess', 'availability' => $available_scott_h, 'oncall' => $on_call_scott_h );
+$days_available_scott_h = get_field('days_available_scott_h');
+$statusStaff[] = array(
+	'name' => 'Scott Hess', 
+	'availabilityClass' => $value, 
+	'availability' => $label, 
+	'oncall' => $on_call_scott_h, 
+	'days' => $days_available_scott_h );
 
-$available_kc_bernesser = get_field('available_kc_bernesser');
+$available_kc_bernesser = get_field_object('available_kc_bernesser');
+$value = $available_kc_bernesser['value'];
+$label = $available_kc_bernesser['choices'][ $value ];
 $on_call_kc_bernesser = get_field('on_call_kc_bernesser');
-$statusStaff[] = array('name' => 'KC Bernesser', 'availability' => $available_kc_bernesser, 'oncall' => $on_call_kc_bernesser );
+$days_available_kc_bernesser = get_field('days_available_kc_bernesser');
+$statusStaff[] = array(
+	'name' => 'KC Bernesser', 
+	'availabilityClass' => $value, 
+	'availability' => $label, 
+	'oncall' => $on_call_kc_bernesser, 
+	'days' => $days_available_kc_bernesser );
 
+
+// Content
 $intro_content = get_field('intro_content');
 
+// Availablility
 $availability_f550 = get_field('availability_f550');
 $notes_f550 = get_field('notes_f550');
 $statusSMAT[] = array('name' => 'F-550', 'availability' => $availability_f550, 'notes' => $notes_f550 );
@@ -140,7 +180,7 @@ $statusMED[] = array('name' => 'Satellite Trailer', 'availability' => $availabil
 
 
 // echo '<pre>';
-// print_r($statusSMAT);
+// print_r($statusStaff);
 // echo '</pre>';
 
 ?>
@@ -150,20 +190,25 @@ $statusMED[] = array('name' => 'Satellite Trailer', 'availability' => $availabil
 		<h1><?php the_title(); ?></h1>
 		
 		<?php echo $intro_content; ?>
-		<h2>Metrolina SMAT Equipment Status:</h2>
+		<h2>MHPC Staff Availability:</h2>
 
 		<div class="status-wrap">
 			<div class="status-row mobile-header">
 				<div class="resource">Staff</div>
-				<div class="availability">&nbsp;</div>
-				<div class="notes">&nbsp;</div>
+				<div class="availability">Availability</div>
+				<div class="days">Days Available</div>
+				<div class="notes">Notes</div>
 			</div>
-
+			<!-- jdks -->
 			<?php foreach( $statusStaff as $info ) : 
-				//echo $info['availability'];
-				if( $info['availability'] == 'Available' ) {
+				echo $info['availabilityClass'];
+				if( $info['availabilityClass'] == 'available' ) {
 					$class = 'green';
-				} elseif( $info['availability'] == 'Not Available' ) {
+				} elseif( $info['availabilityClass'] == 'limited' ) {
+					$class = 'green';
+				} elseif( $info['availabilityClass'] == 'not' ) {
+					$class = 'yellow';
+				} elseif( $info['availabilityClass'] == 'out' ) {
 					$class = 'red';
 				} else {
 					$class = '';
@@ -183,6 +228,18 @@ $statusMED[] = array('name' => 'Satellite Trailer', 'availability' => $availabil
 				<div class="status-row">
 					<div class="resource js-blocks"><?php echo $info['name']; ?></div>
 					<div class="availability js-blocks <?php echo $class; ?>"><?php echo $info['availability']; ?></div>
+					<div class="days js-blocks <?php echo $class; ?>">
+					<?php 
+					// Loop through the days array
+					$days = $info['days']; 
+					// $comma_separated = implode(', ',$days);
+					// echo $comma_separated;
+					foreach ($days as $day) {
+						echo '<li>' . $day . '</li>';
+					}
+
+					?>
+					</div>
 					<div class="notes js-blocks <?php echo $span; ?>"><?php echo $status ?></div>
 				</div>
 			<?php endforeach; ?>
@@ -196,7 +253,7 @@ $statusMED[] = array('name' => 'Satellite Trailer', 'availability' => $availabil
 			<div class="status-row mobile-header">
 				<div class="resource">Resource</div>
 				<div class="availability">Availability</div>
-				<div class="notes">Notes</div>
+				<div class="notes-equip">Notes</div>
 			</div>
 
 			<?php foreach( $statusSMAT as $info ) : 
@@ -217,7 +274,7 @@ $statusMED[] = array('name' => 'Satellite Trailer', 'availability' => $availabil
 				<div class="status-row">
 					<div class="resource js-blocks"><?php echo $info['name']; ?></div>
 					<div class="availability js-blocks <?php echo $class; ?>"><?php echo $info['availability']; ?></div>
-					<div class="notes js-blocks"><?php echo $info['notes']; ?></div>
+					<div class="notes-equip js-blocks"><?php echo $info['notes']; ?></div>
 				</div>
 			<?php endforeach; ?>
 		</div><!-- status wrap -->
@@ -228,7 +285,7 @@ $statusMED[] = array('name' => 'Satellite Trailer', 'availability' => $availabil
 			<div class="status-row mobile-header">
 				<div class="resource">Resource</div>
 				<div class="availability">Availability</div>
-				<div class="notes">Notes</div>
+				<div class="notes-equip">Notes</div>
 			</div>
 
 			<?php foreach( $statusMED as $info ) : 
@@ -249,7 +306,7 @@ $statusMED[] = array('name' => 'Satellite Trailer', 'availability' => $availabil
 				<div class="status-row">
 					<div class="resource js-blocks"><?php echo $info['name']; ?></div>
 					<div class="availability js-blocks <?php echo $class; ?>"><?php echo $availability_f550; ?></div>
-					<div class="notes js-blocks"><?php echo $notes_f550; ?></div>
+					<div class="notes-equip js-blocks"><?php echo $notes_f550; ?></div>
 				</div>
 			<?php endforeach; ?>
 		</div><!-- status wrap -->
