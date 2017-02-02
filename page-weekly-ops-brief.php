@@ -201,7 +201,7 @@ $statusMED[] = array('name' => 'Satellite Trailer', 'availability' => $availabil
 			</div>
 			<!-- jdks -->
 			<?php foreach( $statusStaff as $info ) : 
-				echo $info['availabilityClass'];
+				// echo $info['availabilityClass'];
 				if( $info['availabilityClass'] == 'available' ) {
 					$class = 'green';
 				} elseif( $info['availabilityClass'] == 'limited' ) {
