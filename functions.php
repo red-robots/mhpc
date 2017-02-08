@@ -985,3 +985,27 @@ class description_walker extends Walker_Nav_Menu
             $output .= apply_filters( 'walker_nav_menu_start_el', $item_output, $item, $depth, $args );
             }
 }
+/**
+ * Register our sidebars and widgetized areas.
+ *
+ */
+function acc_widgets_init() {
+
+    register_sidebar( array(
+        'name'          => 'Header Right MHPC',
+        'id'            => 'home_right_mhpc',
+        'before_widget' => '<div>',
+        'after_widget'  => '</div>',
+        'before_title'  => '<h2 class="rounded">',
+        'after_title'   => '</h2>',
+    ) );
+    register_sidebar( array(
+        'name'          => 'Header Right SMAT',
+        'id'            => 'home_right_smat',
+        'before_widget' => '<div>',
+        'after_widget'  => '</div>',
+        'before_title'  => '<h2 class="rounded">',
+        'after_title'   => '</h2>',
+    ) );
+}
+add_action( 'widgets_init', 'acc_widgets_init' );

@@ -1484,22 +1484,11 @@ a:hover{color:#0f3647}
 #top-buttons{width:90%;position:relative;margin:0 auto;z-index:6}
 @media screen and (min-width:600px){#top-buttons{width:350px;float:right;margin:0}
 }#top-buttons ul{margin:0;padding:0;list-style-type:none;z-index:2;position:relative}
-#top-buttons li{position:relative;margin:0;width:45%}
-@media screen and (min-width:600px){#top-buttons li{width:auto}
-}#top-buttons li.smat,#top-buttons li.mhpc{float:left}
-#top-buttons li.member{float:right}
-@media screen and (min-width:600px){#top-buttons li.member{float:left}
-}#top-buttons a{text-decoration:none;width:100%;background-color:#00848e;display:block;padding:15px 10px;color:#fff;font-size:12px;text-align:center;position:relative}
-@media screen and (min-width:600px){#top-buttons a{background-image:url(images/top-buttons.png);background-repeat:no-repeat;background-color:rgba(0,132,142,0);text-indent:-9000px;height:44px;display:inline-block;padding:0}
-}#top-buttons .smat a{background-position:-0 -0;position:relative}
-@media screen and (min-width:600px){#top-buttons .smat a{width:175px}
-}#top-buttons .smat a:hover{background-position:-0 -5px}
-#top-buttons .mhpc a{background-position:-0 -50px;position:relative}
-@media screen and (min-width:600px){#top-buttons .mhpc a{width:175px}
-}#top-buttons .mhpc a:hover{background-position:-0 -55px}
-#top-buttons .member a{background-position:-175px 0;position:relative}
-@media screen and (min-width:600px){#top-buttons .member a{width:175px}
-}#top-buttons .member a:hover{background-position:-175px -5px}
+#top-buttons li{display:inline-block;position:relative;margin:0;width:30%}
+@media screen and (min-width:600px){#top-buttons li{width:auto;display:inline-block;background-color:#00848e;border-radius:0 0 5px 5px}
+}#top-buttons a{text-decoration:none;width:100%;background-color:#00848e;display:block;padding:10px 10px;color:#fff;font-size:12px;text-align:center;position:relative;-webkit-transition:all .3s ease;transition:all .3s ease}
+@media screen and (min-width:600px){#top-buttons a{background-color:#00848e;display:inline-block;border-radius:0 0 5px 5px}
+}#top-buttons a:hover{background-color:rgba(255,255,255,0.2)}
 #alert{width:100%;background-color:#f92f3e;color:#fff;border:1px #F00 solid;padding:0;position:relative;line-height:1.4;font-size:16px;z-index:1000}
 #alert-inside{width:100%;padding:10px 10px 20px 10px;margin:0 auto}
 @media screen and (min-width:1200px){#alert-inside{width:1025px}
@@ -1524,8 +1513,16 @@ a:hover{color:#0f3647}
 }.logo-smat a,.logo-mhpc a{width:280px;height:114px;display:block;text-indent:-9000px}
 @media screen and (min-width:600px){.logo-smat a,.logo-mhpc a{width:280px;height:114px}
 }@media screen and (min-width:1200px){.logo-smat a,.logo-mhpc a{width:344px;height:140px}
-}.top-description{font-family:'Sintony',sans-serif;font-size:17px;color:#00848d;font-style:italic;line-height:1.4;width:100%;float:right;overflow:hidden;margin:25px 0;text-align:center;padding:0 10px 0 0}
+}.top-description{font-family:'Sintony',sans-serif;font-size:17px;color:#00848d;font-style:italic;line-height:1.4;width:100%;float:right;overflow-x:scroll;margin:25px 0;text-align:center;padding:0 10px 0 0}
 @media screen and (min-width:600px){.top-description{text-align:right;margin:25px 10px 0 0}
+}#jstwitter{width:300px;font-size:15px;color:#333;margin:0 auto;text-align:center}
+#jstwitter .tweet{margin:0 auto 15px auto;padding:15px;border-radius:3px;background:#fff;text-align:left;box-shadow:0 0 2px 1px rgba(0,0,0,0.1)}
+#jstwitter .tweet a{text-decoration:none;color:#13c9d0}
+#jstwitter .tweet a:hover{text-decoration:underline}
+#jstwitter img{display:block;margin-bottom:5px;max-width:100%}
+#jstwitter .tweet .time{font-size:10px;font-style:italic;color:#666;display:block;margin-top:3px}
+.site-desc{font-family:'Sintony',sans-serif;font-size:17px;color:#00848d;font-style:italic;line-height:1.4;width:100%;float:left;margin:25px 0;text-align:center;padding:0 5% 0 5%}
+@media screen and (min-width:600px){.site-desc{text-align:center;margin:25px 0 25px 0}
 }.header-right{width:100%;float:right}
 @media screen and (min-width:600px){.header-right{width:40%}
 }@media screen and (min-width:1200px){.header-right{width:500px}
@@ -1560,6 +1557,21 @@ a:hover{color:#0f3647}
 .isotope .isotope-item img{-webkit-transition-property:-webkit-transform,opacity;-webkit-transition-property:opacity,-webkit-transform;transition-property:opacity,-webkit-transform;transition-property:transform,opacity;transition-property:transform,opacity,-webkit-transform}
 .blog-featured-image img{position:absolute;top:0;left:0;max-width:100%;display:block}
 .isotope.no-transition,.isotope.no-transition .isotope-item,.isotope .isotope-item.no-transition{-webkit-transition-duration:0s;transition-duration:0s}
+.twitter-feed{display:none}
+@media screen and (min-width:600px){.twitter-feed{display:block;width:3400px;float:left;position:relative;overflow:hidden;height:190px}
+}.twitter-feed::-webkit-scrollbar{width:12px}
+.twitter-feed::-webkit-scrollbar-track{-webkit-box-shadow:inset 0 0 6px rgba(0,0,0,0.3);border-radius:10px}
+.twitter-feed::-webkit-scrollbar-thumb{border-radius:10px;-webkit-box-shadow:inset 0 0 6px rgba(0,0,0,0.5)}
+@media screen and (min-width:600px){.twitter-feed .italic-tweets{left:100px;width:auto;position:absolute;bottom:5px}
+}@media screen and (min-width:1200px){.twitter-feed .italic-tweets{left:370px}
+}.twitter-feed .the-tweet{width:320px;float:left;margin-right:20px;text-align:left;border:1px solid #eee}
+.twitter-feed .the-tweet a{display:inline-block;width:100%;padding:10px;line-height:0;-webkit-transition:all .3s ease;transition:all .3s ease}
+.twitter-feed .the-tweet a:hover{background-color:rgba(0,132,142,0.1)}
+.twitter-feed .the-tweet .user-image{width:48px;float:left;margin-right:5px}
+.twitter-feed .the-tweet .actual-text{width:290px}
+.twitter-feed .the-tweet .text{width:100%;float:left;line-height:1;margin:0 0 5px 0}
+.twitter-feed .the-tweet .image{width:100%;float:left}
+.twitter-feed .the-tweet .image img{width:100%}
 .sticky{display:block}
 .hentry{margin:0 0 1.5em}
 .byline,.updated:not(.published){display:none}
@@ -1762,6 +1774,8 @@ h1.newsevents{width:100%}
 @media screen and (min-width:600px){.status-row{border:0;border:0 solid #9a9898}
 }.status-row.mobile-header{display:none}
 @media screen and (min-width:600px){.status-row.mobile-header{display:block;font-weight:bold}
+}.status-row .mobile-col-headers{font-weight:bold;border-bottom:1px solid #ccc;padding:3px}
+@media screen and (min-width:600px){.status-row .mobile-col-headers{display:none}
 }.status-row .resource,.status-row .availability,.status-row .notes,.status-row .days,.status-row .notes-equip{padding:1%;float:left}
 .status-row .resource p,.status-row .availability p,.status-row .notes p,.status-row .days p,.status-row .notes-equip p{margin:0}
 @media screen and (min-width:600px){.status-row .resource,.status-row .availability,.status-row .notes,.status-row .days,.status-row .notes-equip{border:1px solid #9a9898}

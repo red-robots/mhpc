@@ -3,13 +3,47 @@
  * Template Name: Homepage
  */
 
-get_header(); ?>
+get_header(); 
+
+//      If is the SMAT Site
+if(
+  is_tree(82) || 
+  ('smatprograms' == get_post_type())  ||
+  ('smatresources' == get_post_type()) ||
+  ('smatslides' == get_post_type())
+  ) {   
+      $WhichSiteAreWeOn = 'SMAT';
+      $headerDescription = 'smat_header_description';
+    } 
+//      If is the MHPC Site
+elseif(
+  is_tree(84) || 
+  ('programs' == get_post_type())  ||
+  ('resources' == get_post_type()) ||
+  ('slides' == get_post_type())
+//is_search()
+
+  ) {
+      $WhichSiteAreWeOn = 'MHPC';
+      $headerDescription = 'header_description';
+    } else {
+      $WhichSiteAreWeOn = 'MHPC';
+      $headerDescription = 'header_description';
+    }
 
 
+
+   ?>
 
             
             
-            <div class="page-content">
+<div class="page-content">
+
+<!-- Site Description -->
+<div class="site-desc">
+  <?php if(get_field($headerDescription, 'option')!="") { the_field($headerDescription , 'option'); } ?>
+</div>
+
    <!-- 
   ############################    News & Events
   -->         	

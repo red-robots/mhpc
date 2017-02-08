@@ -122,11 +122,13 @@ endif;
                 <div id="top-buttons">
                     <ul>
                        <?php if ('MHPC' == $WhichSiteAreWeOn) { // If is The MHPC Tree ?>
-                            <li class="smat"><a href="<?php bloginfo('url'); ?>/smat">Go to SMAT site</a></li>
-                            <li class="member"><a href="<?php bloginfo('url'); ?>/mhpc/members">Member-login</a></li>
+                            <li class="smat js-blocks"><a href="<?php bloginfo('url'); ?>/smat">Go to SMAT site</a></li>
+                            <li class="member js-blocks"><a href="<?php bloginfo('url'); ?>/mhpc/weekly-ops-brief">Weekly Ops Brief</a></li>
+                            <li class="member js-blocks"><a href="<?php bloginfo('url'); ?>/mhpc/members">Member-login</a></li>
                        <?php } elseif('SMAT' == $WhichSiteAreWeOn) { // If is the SMAT Tree?>
-                            <li class="mhpc"><a href="<?php bloginfo('url'); ?>/mhpc">Go to MHPC site</a></li>
-                            <li class="member"><a href="<?php bloginfo('url'); ?>/mhpc/members">Member-login</a></li>
+                            <li class="mhpc js-blocks"><a href="<?php bloginfo('url'); ?>/mhpc">Go to MHPC site</a></li>
+                            <li class="member js-blocks"><a href="<?php bloginfo('url'); ?>/mhpc/weekly-ops-brief">Weekly Ops Brief</a></li>
+                            <li class="member js-blocks"><a href="<?php bloginfo('url'); ?>/mhpc/members">Member-login</a></li>
                        <?php } ?>
                           
                     </ul>
@@ -156,7 +158,12 @@ endif;
         <div class="header-right">
         
         <div class="top-description">
-			<?php if(get_field($headerDescription, 'option')!="") { the_field($headerDescription , 'option'); } ?>
+			     <?php // twitter feed to go here 
+           if('MHPC' == $WhichSiteAreWeOn) {
+             get_template_part('twitter-feed-mhpc');
+          } elseif('SMAT' == $WhichSiteAreWeOn) { 
+              get_template_part('twitter-feed-smat');
+          } ?>
         </div><!-- top description -->
     
     

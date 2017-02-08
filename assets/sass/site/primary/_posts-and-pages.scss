@@ -1363,6 +1363,14 @@ h1.newsevents {
 			font-weight: bold;
 		}
 	}
+	.mobile-col-headers {
+		font-weight: bold;
+		border-bottom: 1px solid #ccc;
+		padding: 3px;
+		@media screen and (min-width: $tabwidth) {
+			display: none;
+		}
+	}
 
 	.resource, .availability, .notes, .days, .notes-equip  {
 		padding: 1%;

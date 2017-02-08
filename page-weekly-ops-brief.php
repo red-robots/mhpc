@@ -196,7 +196,7 @@ $statusMED[] = array('name' => 'Satellite Trailer', 'availability' => $availabil
 			<div class="status-row mobile-header">
 				<div class="resource">Staff</div>
 				<div class="availability">Availability</div>
-				<div class="days">Days Available</div>
+				<div class="days">Days Unavailable</div>
 				<div class="notes">Notes</div>
 			</div>
 			<!-- jdks -->
@@ -205,7 +205,7 @@ $statusMED[] = array('name' => 'Satellite Trailer', 'availability' => $availabil
 				if( $info['availabilityClass'] == 'available' ) {
 					$class = 'green';
 				} elseif( $info['availabilityClass'] == 'limited' ) {
-					$class = 'green';
+					$class = 'yellow';
 				} elseif( $info['availabilityClass'] == 'not' ) {
 					$class = 'yellow';
 				} elseif( $info['availabilityClass'] == 'out' ) {
@@ -226,8 +226,11 @@ $statusMED[] = array('name' => 'Satellite Trailer', 'availability' => $availabil
 
 			?>
 				<div class="status-row">
+
 					<div class="resource js-blocks"><?php echo $info['name']; ?></div>
+					<div class="mobile-col-headers">Availability</div>
 					<div class="availability js-blocks <?php echo $class; ?>"><?php echo $info['availability']; ?></div>
+					<div class="mobile-col-headers">Days Unavailable</div>
 					<div class="days js-blocks <?php //echo $class; ?>">
 					<?php 
 					// Loop through the days array
@@ -242,6 +245,7 @@ $statusMED[] = array('name' => 'Satellite Trailer', 'availability' => $availabil
 
 					?>
 					</div>
+					<div class="mobile-col-headers">Notes</div>
 					<div class="notes js-blocks <?php echo $span; ?>"><?php echo $status ?></div>
 				</div>
 			<?php endforeach; ?>
@@ -274,8 +278,11 @@ $statusMED[] = array('name' => 'Satellite Trailer', 'availability' => $availabil
 
 			?>
 				<div class="status-row">
+					<div class="mobile-col-headers">Resource</div>
 					<div class="resource js-blocks"><?php echo $info['name']; ?></div>
+					<div class="mobile-col-headers">Availability</div>
 					<div class="availability js-blocks <?php echo $class; ?>"><?php echo $info['availability']; ?></div>
+					<div class="mobile-col-headers">Notes</div>
 					<div class="notes-equip js-blocks"><?php echo $info['notes']; ?></div>
 				</div>
 			<?php endforeach; ?>
