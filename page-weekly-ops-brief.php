@@ -314,8 +314,8 @@ $statusMED[] = array('name' => 'Satellite Trailer', 'availability' => $availabil
 			?>
 				<div class="status-row">
 					<div class="resource js-blocks"><?php echo $info['name']; ?></div>
-					<div class="availability js-blocks <?php echo $class; ?>"><?php echo $availability_f550; ?></div>
-					<div class="notes-equip js-blocks"><?php echo $notes_f550; ?></div>
+					<div class="availability js-blocks <?php echo $class; ?>"><?php echo $info['availability']; ?></div>
+					<div class="notes-equip js-blocks"><?php echo $info['notes']; ?></div>
 				</div>
 			<?php endforeach; ?>
 		</div><!-- status wrap -->
