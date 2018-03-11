@@ -19,7 +19,7 @@
   
       <div class="text">
         <div class="user-image">
-          <img src=" <?php echo $tweet['user']['profile_image_url']; ?>">
+          <img src=" <?php echo $tweet['user']['profile_image_url_https']; ?>">
         </div>
         <?php if( $tweet['text'] != '' ) { ?>
           <div class="actual-text">
@@ -28,9 +28,9 @@
         <?php } ?>
       </div> 
       <?php if($tweet['entities']['media'][0]['media_url'] != '') { ?>
-        <div class="image">
+       <!-- <div class="image">
           <img src="<?php echo $tweet['entities']['media'][0]['media_url']; ?>">
-        </div>
+        </div>-->
       <?php } ?>
       </a>
     </div> <!-- the tweet -->
