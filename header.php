@@ -177,7 +177,7 @@ endif;
         <div id="sociallinks">
         	<ul>
             	<li class="facebook"><a href="<?php echo $facebooklink;  ?>" target="_blank">Like us on Facebook</a></li>
-                <li class="twitter"><a href="<?php echo $twitterlink;  ?>" target="_blank">Follow us on Twitter</a></li>
+                <!-- <li class="twitter"><a href="<?php echo $twitterlink;  ?>" target="_blank">Follow us on Twitter</a></li>-->
                 <li class="youtube"><a href="<?php the_field('youtube_link', 'option'); ?>" target="_blank">Watch us on Youtube</a></li>
             </ul>
         </div><!-- social links -->
