@@ -160,9 +160,9 @@ endif;
         <div class="top-description">
 			     <?php // twitter feed to go here 
            if('MHPC' == $WhichSiteAreWeOn) {
-             get_template_part('twitter-feed-mhpc');
+             //get_template_part('twitter-feed-mhpc');
           } elseif('SMAT' == $WhichSiteAreWeOn) { 
-              get_template_part('twitter-feed-smat');
+              //get_template_part('twitter-feed-smat');
           } ?>
         </div><!-- top description -->
     
