@@ -12,13 +12,13 @@ $statusMED = array();
 $statusStaff = array();
 
 // Staff
-$available_travis_c = get_field_object('available_travis_c');
+$available_travis_c = get_field_object('available_mike_tessari');
 $value = $available_travis_c['value'];
 $label = $available_travis_c['choices'][ $value ];
-$on_call = get_field('on_call');
-$days_available_travis_c = get_field('days_available_travis_c');
+$on_call = get_field('on_call_mike_tessari');
+$days_available_travis_c = get_field('days_unavailable_mike_tessari');
 $statusStaff[] = array(
-	'name' => 'Travis Cryan', 
+	'name' => 'Mike Tessari', 
 	'availabilityClass' => $value, 
 	'availability' => $label, 
 	'oncall' => $on_call, 
