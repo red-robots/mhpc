@@ -157,14 +157,14 @@ endif;
         
         <div class="header-right">
         
-        <div class="top-description">
+      <!--  <div class="top-description">
 			     <?php // twitter feed to go here 
            if('MHPC' == $WhichSiteAreWeOn) {
              //get_template_part('twitter-feed-mhpc');
           } elseif('SMAT' == $WhichSiteAreWeOn) { 
               //get_template_part('twitter-feed-smat');
           } ?>
-        </div><!-- top description -->
+        </div> top description -->
     
     
 		<?php if('MHPC' == $WhichSiteAreWeOn) {  // is is mhpc 
