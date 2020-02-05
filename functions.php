@@ -1,4 +1,9 @@
 <?php
+// ini_set('display_errors','Off');
+// ini_set('error_reporting', E_ALL );
+// define('WP_DEBUG', false);
+// define('WP_DEBUG_DISPLAY', false);
+
  // Enqueueing all the java script in a no conflict mode
  function ineedmyjava() {
 	if (!is_admin()) {
@@ -939,52 +944,57 @@ add_action( 'admin_head-profile.php', 'cor_profile_subject_start' );
 add_action( 'admin_footer-profile.php', 'cor_profile_subject_end' );
 
 add_action( 'admin_bar_menu', 'remove_wp_logo', 999 );
-
 function remove_wp_logo( $wp_admin_bar ) {
 	$wp_admin_bar->remove_node( 'wp-logo' );
-	$wp_admin_bar->remove_node( 'site-name' );
+	//$wp_admin_bar->remove_node( 'site-name' );
+
+    $node = $wp_admin_bar->get_node('view-site');
+    //Change target
+    $node->meta['target'] = '_blank';
+    //Update Node.
+    $wp_admin_bar->add_node($node);
 }
 
-class description_walker extends Walker_Nav_Menu
-{
-      function start_el(&$output, $item, $depth, $args)
-      {
-           global $wp_query;
-           $indent = ( $depth ) ? str_repeat( "\t", $depth ) : '';
+// class description_walker extends Walker_Nav_Menu
+// {
+//       function start_el(&$output, $item, $depth, $args)
+//       {
+//            global $wp_query;
+//            $indent = ( $depth ) ? str_repeat( "\t", $depth ) : '';
 
-           $class_names = $value = '';
+//            $class_names = $value = '';
 
-           $classes = empty( $item->classes ) ? array() : (array) $item->classes;
+//            $classes = empty( $item->classes ) ? array() : (array) $item->classes;
 
-           $class_names = join( ' ', apply_filters( 'nav_menu_css_class', array_filter( $classes ), $item ) );
-           $class_names = ' class="'. esc_attr( $class_names ) . '"';
+//            $class_names = join( ' ', apply_filters( 'nav_menu_css_class', array_filter( $classes ), $item ) );
+//            $class_names = ' class="'. esc_attr( $class_names ) . '"';
 
-           $output .= $indent . '<li id="menu-item-'. $item->ID . '"' . $value . $class_names .'onClick="return true">';
+//            $output .= $indent . '<li id="menu-item-'. $item->ID . '"' . $value . $class_names .'onClick="return true">';
 
-           $attributes  = ! empty( $item->attr_title ) ? ' title="'  . esc_attr( $item->attr_title ) .'"' : '';
-           $attributes .= ! empty( $item->target )     ? ' target="' . esc_attr( $item->target     ) .'"' : '';
-           $attributes .= ! empty( $item->xfn )        ? ' rel="'    . esc_attr( $item->xfn        ) .'"' : '';
-           $attributes .= ! empty( $item->url )        ? ' href="'   . esc_attr( $item->url        ) .'"' : '';
+//            $attributes  = ! empty( $item->attr_title ) ? ' title="'  . esc_attr( $item->attr_title ) .'"' : '';
+//            $attributes .= ! empty( $item->target )     ? ' target="' . esc_attr( $item->target     ) .'"' : '';
+//            $attributes .= ! empty( $item->xfn )        ? ' rel="'    . esc_attr( $item->xfn        ) .'"' : '';
+//            $attributes .= ! empty( $item->url )        ? ' href="'   . esc_attr( $item->url        ) .'"' : '';
 
-           $prepend = '';
-           $append = '';
-           $description  = ! empty( $item->description ) ? '<span>'.esc_attr( $item->description ).'</span>' : '';
+//            $prepend = '';
+//            $append = '';
+//            $description  = ! empty( $item->description ) ? '<span>'.esc_attr( $item->description ).'</span>' : '';
 
-           if($depth != 0)
-           {
-                     $description = $append = $prepend = "";
-           }
+//            if($depth != 0)
+//            {
+//                      $description = $append = $prepend = "";
+//            }
 
-            $item_output = $args->before;
-            $item_output .= '<a'. $attributes .'onClick="return true">';
-            $item_output .= $args->link_before .$prepend.apply_filters( 'the_title', $item->title, $item->ID ).$append;
-            $item_output .= $description.$args->link_after;
-            $item_output .= '</a>';
-            $item_output .= $args->after;
+//             $item_output = $args->before;
+//             $item_output .= '<a'. $attributes .'onClick="return true">';
+//             $item_output .= $args->link_before .$prepend.apply_filters( 'the_title', $item->title, $item->ID ).$append;
+//             $item_output .= $description.$args->link_after;
+//             $item_output .= '</a>';
+//             $item_output .= $args->after;
 
-            $output .= apply_filters( 'walker_nav_menu_start_el', $item_output, $item, $depth, $args );
-            }
-}
+//             $output .= apply_filters( 'walker_nav_menu_start_el', $item_output, $item, $depth, $args );
+//             }
+// }
 /**
  * Register our sidebars and widgetized areas.
  *
@@ -1009,3 +1019,15 @@ function acc_widgets_init() {
     ) );
 }
 add_action( 'widgets_init', 'acc_widgets_init' );
+
+
+// Change Link
+function loginpage_custom_link() {
+    return get_site_url();
+}
+add_filter('login_headerurl','loginpage_custom_link');
+
+function client_login_logo_url_title() {
+  return get_bloginfo('name');
+}
+add_filter( 'login_headertitle', 'client_login_logo_url_title' );

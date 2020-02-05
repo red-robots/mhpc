@@ -553,7 +553,7 @@ to{visibility:hidden;-webkit-transform:translate3d(0,-100%,0);transform:translat
  *  Font Awesome 4.5.0 by @davegandy - http://fontawesome.io - @fontawesome
  *  License - http://fontawesome.io/license (Font: SIL OFL 1.1, CSS: MIT License)
  */@font-face{font-family:'FontAwesome';src:url("./fonts/font-awesome/fontawesome-webfont.eot?v=4.5.0");src:url("./fonts/font-awesome/fontawesome-webfont.eot?v=4.5.0#iefix") format("embedded-opentype"),url("./fonts/font-awesome/fontawesome-webfont.woff2?v=4.5.0") format("woff2"),url("./fonts/font-awesome/fontawesome-webfont.woff?v=4.5.0") format("woff"),url("./fonts/font-awesome/fontawesome-webfont.ttf?v=4.5.0") format("truetype"),url("./fonts/font-awesome/fontawesome-webfont.svg?v=4.5.0#fontawesomeregular") format("svg");font-weight:normal;font-style:normal}
-.fa{display:inline-block;font:normal normal normal 14px / 1 FontAwesome;font-size:inherit;text-rendering:auto;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
+.fa{display:inline-block;font:normal normal normal 14px/1 FontAwesome;font-size:inherit;text-rendering:auto;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
 .fa-lg{font-size:1.33333em;line-height:.75em;vertical-align:-15%}
 .fa-2x{font-size:2em}
 .fa-3x{font-size:3em}
@@ -1477,19 +1477,25 @@ a:hover{color:#0f3647}
 }.page-right{width:100%;float:right;margin-top:30px}
 @media screen and (min-width:600px){.page-right{width:30%}
 }.header{width:100%;float:left;position:relative}
-#top-header{width:100%;height:32px;background-image:url("images/header-bar.png");background-repeat:repeat-x;position:relative}
-#top-header-inside{width:100%;margin:0 auto;padding:0;overflow:hidden;position:relative}
+#top-header{width:100%;height:32px;background-repeat:repeat-x;position:relative;background:#087e87;background:-webkit-linear-gradient(top,#087e87 0,#005666 100%);background:linear-gradient(to bottom,#087e87 0,#005666 100%);filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#087e87',endColorstr='#005666',GradientType=0)}
+@media screen and (max-width:599px){#top-header{height:auto;background-image:none !important}
+#top-header #top-header-inside{background:#087e87;background:-webkit-linear-gradient(top,#087e87 0,#005666 100%);background:linear-gradient(to bottom,#087e87 0,#005666 100%);filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#087e87',endColorstr='#005666',GradientType=0)}
+}#top-header-inside{width:100%;margin:0 auto;padding:0;overflow:hidden;position:relative}
 @media screen and (min-width:1200px){#top-header-inside{width:1045px}
 }#top-address{width:auto;float:right;color:#fff;font-size:12px;margin-right:10px;margin-top:5px}
 #top-buttons{width:90%;position:relative;margin:0 auto;z-index:6}
-@media screen and (min-width:600px){#top-buttons{width:350px;float:right;margin:0}
+@media screen and (min-width:600px){#top-buttons{width:80%;float:right;margin:0}
 }#top-buttons ul{margin:0;padding:0;list-style-type:none;z-index:2;position:relative}
-#top-buttons li{display:inline-block;position:relative;margin:0;width:30%}
+@media screen and (min-width:600px){#top-buttons ul{display:inline-block;float:right}
+}@media screen and (max-width:599px){#top-buttons ul{text-align:center}
+}#top-buttons li{display:inline-block;position:relative;margin:0;width:30%}
 @media screen and (min-width:600px){#top-buttons li{width:auto;display:inline-block;background-color:#00848e;border-radius:0 0 5px 5px}
+}@media screen and (max-width:599px){#top-buttons li{width:40%}
 }#top-buttons a{text-decoration:none;width:100%;background-color:#00848e;display:block;padding:10px 10px;color:#fff;font-size:12px;text-align:center;position:relative;-webkit-transition:all .3s ease;transition:all .3s ease}
 @media screen and (min-width:600px){#top-buttons a{background-color:#00848e;display:inline-block;border-radius:0 0 5px 5px}
 }#top-buttons a:hover{background-color:rgba(255,255,255,0.2)}
-#alert{width:100%;background-color:#f92f3e;color:#fff;border:1px #F00 solid;padding:0;position:relative;line-height:1.4;font-size:16px;z-index:1000}
+@media screen and (max-width:599px){#top-buttons a{background-color:transparent}
+}#alert{width:100%;background-color:#f92f3e;color:#fff;border:1px #F00 solid;padding:0;position:relative;line-height:1.4;font-size:16px;z-index:1000}
 #alert-inside{width:100%;padding:10px 10px 20px 10px;margin:0 auto}
 @media screen and (min-width:1200px){#alert-inside{width:1025px}
 }#alert a{color:#fff}

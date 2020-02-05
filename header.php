@@ -35,7 +35,7 @@
 
 
 <?php wp_head(); 
-
+$WhichSiteAreWeOn = '';
 $site = $_REQUEST['site'];
 $postType = $_REQUEST['post_type'];
 if( $site != '' ) :
@@ -119,19 +119,37 @@ endif;
 
         	
 			<?php if(!is_front_page()) : ?>
+                <?php 
+                $mhpcNav = get_field("mhpcNav","option"); 
+                $smatNav = get_field("smatNav","option"); 
+                ?>
                 <div id="top-buttons">
-                    <ul>
-                       <?php if ('MHPC' == $WhichSiteAreWeOn) { // If is The MHPC Tree ?>
-                            <li class="smat js-blocks"><a href="<?php bloginfo('url'); ?>/smat">Go to SMAT site</a></li>
-                            <li class="member js-blocks"><a href="<?php bloginfo('url'); ?>/mhpc/weekly-ops-brief">Weekly Ops Brief</a></li>
-                            <li class="member js-blocks"><a href="<?php bloginfo('url'); ?>/mhpc/members">Member-login</a></li>
-                       <?php } elseif('SMAT' == $WhichSiteAreWeOn) { // If is the SMAT Tree?>
-                            <li class="mhpc js-blocks"><a href="<?php bloginfo('url'); ?>/mhpc">Go to MHPC site</a></li>
-                            <li class="member js-blocks"><a href="<?php bloginfo('url'); ?>/mhpc/weekly-ops-brief">Weekly Ops Brief</a></li>
-                            <li class="member js-blocks"><a href="<?php bloginfo('url'); ?>/mhpc/members">Member-login</a></li>
-                       <?php } ?>
-                          
-                    </ul>
+                  <ul>
+                  <?php if ($WhichSiteAreWeOn=='MHPC') { ?>
+                    <?php foreach ($mhpcNav as $mn) { 
+                      $navTitle = $mn['title'];
+                      $navLink = $mn['link'];
+                      if($navTitle && $navLink) { ?>
+                      <li class="js-blocks-no">
+                        <a href="<?php echo $navLink; ?>"><?php echo $navTitle; ?></a>
+                      </li>
+                      <?php } ?>
+                    <?php } ?>
+                    
+                  <?php } elseif( $WhichSiteAreWeOn=='SMAT' ) { ?>
+                    
+                    <?php foreach ($smatNav as $sn) { 
+                      $navTitle = $sn['title'];
+                      $navLink = $sn['link'];
+                      if($navTitle && $navLink) { ?>
+                      <li class="js-blocks-no">
+                        <a href="<?php echo $navLink; ?>"><?php echo $navTitle; ?></a>
+                      </li>
+                      <?php } ?>
+                    <?php } ?>
+
+                  <?php } ?>
+                  </ul>
                </div><!-- top buttons -->
             <?php endif; ?>
            
