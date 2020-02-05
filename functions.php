@@ -1,23 +1,18 @@
 <?php
-// ini_set('display_errors','Off');
-// ini_set('error_reporting', E_ALL );
-// define('WP_DEBUG', false);
-// define('WP_DEBUG_DISPLAY', false);
-
  // Enqueueing all the java script in a no conflict mode
  function ineedmyjava() {
-	if (!is_admin()) {
+    if (!is_admin()) {
  
-		wp_deregister_script('jquery');
-		wp_register_script('jquery', 'https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js', false, '1.10.2', true);
-		wp_enqueue_script('jquery');
-		
-		// Custom Theme scripts...
-		wp_register_script(
-			'vendors',
-			get_bloginfo('template_directory') . '/assets/js/vendors.js',
-			array('jquery') , '1.1', true );
-		wp_enqueue_script('vendors');
+        wp_deregister_script('jquery');
+        wp_register_script('jquery', 'https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js', false, '1.10.2', true);
+        wp_enqueue_script('jquery');
+        
+        // Custom Theme scripts...
+        wp_register_script(
+            'vendors',
+            get_bloginfo('template_directory') . '/assets/js/vendors.js',
+            array('jquery') , '1.1', true );
+        wp_enqueue_script('vendors');
 
         // Custom Theme scripts...
         wp_register_script(
@@ -25,42 +20,42 @@
             get_bloginfo('template_directory') . '/assets/js/custom.js',
             array('jquery'), '1.1', true);
         wp_enqueue_script('custom');
-		
-		
-		// Homepage slider 'flexslider' scripts...
-		// wp_register_script(
-		// 	'flexslider',
-		// 	get_bloginfo('template_directory') . '/js/flexslider.js',
-		// 	array('jquery') );
-		// wp_enqueue_script('flexslider');
-		
-		
-		// // Who We Serve popups
-		// wp_register_script(
-		// 	'colorbox',
-		// 	get_bloginfo('template_directory') . '/js/colorbox.js',
-		// 	array('jquery') );
-		// wp_enqueue_script('colorbox');
-		
-		
-		// // Image Mapping
-		// wp_register_script(
-		// 	'imagemap',
-		// 	get_bloginfo('template_directory') . '/js/imagemap.js',
-		// 	array('jquery') );
-		// wp_enqueue_script('imagemap');
-		
-		// // Leadership isotope layout
-		// wp_register_script(
-		// 	'isotope',
-		// 	get_bloginfo('template_directory') . '/js/isotope.js',
-		// 	array('jquery') );
-		// wp_enqueue_script('isotope');
-		
-	
-		
-		
-	}
+        
+        
+        // Homepage slider 'flexslider' scripts...
+        // wp_register_script(
+        //  'flexslider',
+        //  get_bloginfo('template_directory') . '/js/flexslider.js',
+        //  array('jquery') );
+        // wp_enqueue_script('flexslider');
+        
+        
+        // // Who We Serve popups
+        // wp_register_script(
+        //  'colorbox',
+        //  get_bloginfo('template_directory') . '/js/colorbox.js',
+        //  array('jquery') );
+        // wp_enqueue_script('colorbox');
+        
+        
+        // // Image Mapping
+        // wp_register_script(
+        //  'imagemap',
+        //  get_bloginfo('template_directory') . '/js/imagemap.js',
+        //  array('jquery') );
+        // wp_enqueue_script('imagemap');
+        
+        // // Leadership isotope layout
+        // wp_register_script(
+        //  'isotope',
+        //  get_bloginfo('template_directory') . '/js/isotope.js',
+        //  array('jquery') );
+        // wp_enqueue_script('isotope');
+        
+    
+        
+        
+    }
 }
  
 add_action('init', 'ineedmyjava');
@@ -72,7 +67,7 @@ if( function_exists('acf_add_options_page') ) {
 }
 /*
 
-	Custom client login, link and title.
+    Custom client login, link and title.
 
 */
 function my_login_logo() { ?><style type="text/css">
@@ -98,13 +93,13 @@ function mytheme_favicon() { ?> <link rel="shortcut icon" href="<?php echo blogi
 add_action('init', 'js_custom_init');
 function js_custom_init() 
 {
-	
-	
-	
-	// Leadership
+    
+    
+    
+    // Leadership
  
      $labels = array(
-	'name' => _x('Leadership', 'post type general name'),
+    'name' => _x('Leadership', 'post type general name'),
     'singular_name' => _x('Leadership', 'post type singular name'),
     'add_new' => _x('Add New', 'Leadership'),
     'add_new_item' => __('Add New Leadership'),
@@ -118,7 +113,7 @@ function js_custom_init()
     'menu_name' => 'Leadership'
   );
   $args = array(
-	'labels' => $labels,
+    'labels' => $labels,
     'public' => true,
     'publicly_queryable' => true,
     'show_ui' => true, 
@@ -130,18 +125,18 @@ function js_custom_init()
     'hierarchical' => false,
     'menu_position' => 20,
     'supports' => array('title','editor','custom-fields','thumbnail'),
-	
+    
   ); 
   register_post_type('leadership',$args);
-	
-	
-	
-	
-	
-		// Partner Organizations
+    
+    
+    
+    
+    
+        // Partner Organizations
   
      $labels = array(
-	'name' => _x('Partner Organizations', 'post type general name'),
+    'name' => _x('Partner Organizations', 'post type general name'),
     'singular_name' => _x('Partner Organization', 'post type singular name'),
     'add_new' => _x('Add New', 'Organization'),
     'add_new_item' => __('Add New Organization'),
@@ -155,7 +150,7 @@ function js_custom_init()
     'menu_name' => 'Partner Organizations'
   );
   $args = array(
-	'labels' => $labels,
+    'labels' => $labels,
     'public' => true,
     'publicly_queryable' => true,
     'show_ui' => true, 
@@ -167,23 +162,23 @@ function js_custom_init()
     'hierarchical' => false,
     'menu_position' => 20,
     'supports' => array('title','editor','custom-fields','thumbnail', 'county'),
-	'taxonomies' => array('organization', 'county') 
-	
+    'taxonomies' => array('organization', 'county') 
+    
   ); 
   register_post_type('organizations',$args);
-	
-	
-	
-	
-	
-	
-	
-	
+    
+    
+    
+    
+    
+    
+    
+    
 
   // Register the Program Highlights
   
      $labels = array(
-	'name' => _x('MHPC Program Highlights', 'post type general name'),
+    'name' => _x('MHPC Program Highlights', 'post type general name'),
     'singular_name' => _x('MHPC Program Highlights', 'post type singular name'),
     'add_new' => _x('Add New', 'Programs'),
     'add_new_item' => __('Add New Programs'),
@@ -197,7 +192,7 @@ function js_custom_init()
     'menu_name' => 'MHPC Program Highlights'
   );
   $args = array(
-	'labels' => $labels,
+    'labels' => $labels,
     'public' => true,
     'publicly_queryable' => true,
     'show_ui' => true, 
@@ -209,7 +204,7 @@ function js_custom_init()
     'hierarchical' => false,
     'menu_position' => 20,
     'supports' => array('title','editor','custom-fields','thumbnail', 'excerpt'),
-	
+    
   ); 
   register_post_type('programs',$args);
   
@@ -217,7 +212,7 @@ function js_custom_init()
    // Register the Program Highlights
   
 /*     $labels = array(
-	'name' => _x('MHPC Resources', 'post type general name'),
+    'name' => _x('MHPC Resources', 'post type general name'),
     'singular_name' => _x('Resources', 'post type singular name'),
     'add_new' => _x('Add New', 'Resources'),
     'add_new_item' => __('Add New Resources'),
@@ -231,7 +226,7 @@ function js_custom_init()
     'menu_name' => 'MHPC Resources'
   );
   $args = array(
-	'labels' => $labels,
+    'labels' => $labels,
     'public' => true,
     'publicly_queryable' => true,
     'show_ui' => true, 
@@ -243,14 +238,14 @@ function js_custom_init()
     'hierarchical' => false,
     'menu_position' => 20,
     'supports' => array('title','editor','custom-fields','thumbnail'),
-	
+    
   ); 
   register_post_type('resources',$args);*/
   
     // Register the Homepage Slides
   
      $labels = array(
-	'name' => _x('MHPC Homepage Slides', 'post type general name'),
+    'name' => _x('MHPC Homepage Slides', 'post type general name'),
     'singular_name' => _x('Homepage Slides', 'post type singular name'),
     'add_new' => _x('Add New', 'Slide'),
     'add_new_item' => __('Add New Slide'),
@@ -264,7 +259,7 @@ function js_custom_init()
     'menu_name' => 'MHPC Homepage Slides'
   );
   $args = array(
-	'labels' => $labels,
+    'labels' => $labels,
     'public' => true,
     'publicly_queryable' => true,
     'show_ui' => true, 
@@ -276,7 +271,7 @@ function js_custom_init()
     'hierarchical' => false,
     'menu_position' => 20,
     'supports' => array('title','editor','custom-fields','thumbnail'),
-	
+    
   ); 
   register_post_type('slides',$args);
   
@@ -286,15 +281,15 @@ function js_custom_init()
   
   //#######################################################
   
-  					// SMAT Custom Post Types 
-					
+                    // SMAT Custom Post Types 
+                    
 // #########################################################
 
 
 // Register the SMAT NEws and Events
   
 /*     $labels = array(
-	'name' => _x('SMAT News and Events', 'post type general name'),
+    'name' => _x('SMAT News and Events', 'post type general name'),
     'singular_name' => _x('SMAT News and Events', 'post type singular name'),
     'add_new' => _x('Add New', 'News/Events'),
     'add_new_item' => __('Add New News/Events'),
@@ -308,7 +303,7 @@ function js_custom_init()
     'menu_name' => 'SMAT News and Events'
   );
   $args = array(
-	'labels' => $labels,
+    'labels' => $labels,
     'public' => true,
     'publicly_queryable' => true,
     'show_ui' => true, 
@@ -320,7 +315,7 @@ function js_custom_init()
     'hierarchical' => false,
     'menu_position' => 20,
     'supports' => array('title','editor','custom-fields','thumbnail'),
-	
+    
   ); 
   register_post_type('smatnewsevents',$args);
 */
@@ -330,7 +325,7 @@ function js_custom_init()
 // Register the Program Highlights
   
      $labels = array(
-	'name' => _x('SMAT Program Highlights', 'post type general name'),
+    'name' => _x('SMAT Program Highlights', 'post type general name'),
     'singular_name' => _x('SMAT Program Highlights', 'post type singular name'),
     'add_new' => _x('Add New', 'Programs'),
     'add_new_item' => __('Add New Programs'),
@@ -344,7 +339,7 @@ function js_custom_init()
     'menu_name' => 'SMAT Program Highlights'
   );
   $args = array(
-	'labels' => $labels,
+    'labels' => $labels,
     'public' => true,
     'publicly_queryable' => true,
     'show_ui' => true, 
@@ -356,7 +351,7 @@ function js_custom_init()
     'hierarchical' => false,
     'menu_position' => 20,
     'supports' => array('title','editor','custom-fields','thumbnail'),
-	
+    
   ); 
   register_post_type('smatprograms',$args);
   
@@ -364,7 +359,7 @@ function js_custom_init()
    // Register the Program Highlights
   
 /*     $labels = array(
-	'name' => _x('SMAT Resources', 'post type general name'),
+    'name' => _x('SMAT Resources', 'post type general name'),
     'singular_name' => _x('Resources', 'post type singular name'),
     'add_new' => _x('Add New', 'Resources'),
     'add_new_item' => __('Add New Resources'),
@@ -378,7 +373,7 @@ function js_custom_init()
     'menu_name' => 'SMAT Resources'
   );
   $args = array(
-	'labels' => $labels,
+    'labels' => $labels,
     'public' => true,
     'publicly_queryable' => true,
     'show_ui' => true, 
@@ -390,14 +385,14 @@ function js_custom_init()
     'hierarchical' => false,
     'menu_position' => 20,
     'supports' => array('title','editor','custom-fields','thumbnail'),
-	
+    
   ); 
   register_post_type('smatresources',$args);*/
   
     // Register the Homepage Slides
   
      $labels = array(
-	'name' => _x('SMAT Homepage Slides', 'post type general name'),
+    'name' => _x('SMAT Homepage Slides', 'post type general name'),
     'singular_name' => _x('Homepage Slides', 'post type singular name'),
     'add_new' => _x('Add New', 'Slide'),
     'add_new_item' => __('Add New Slide'),
@@ -411,7 +406,7 @@ function js_custom_init()
     'menu_name' => 'SMAT Homepage Slides'
   );
   $args = array(
-	'labels' => $labels,
+    'labels' => $labels,
     'public' => true,
     'publicly_queryable' => true,
     'show_ui' => true, 
@@ -423,7 +418,7 @@ function js_custom_init()
     'hierarchical' => false,
     'menu_position' => 20,
     'supports' => array('title','editor','custom-fields','thumbnail'),
-	
+    
   ); 
   register_post_type('smatslides',$args);
 
@@ -433,52 +428,52 @@ function js_custom_init()
 /*
 ##############################################
 
-				Custom Taxonomies
+                Custom Taxonomies
 
 */
 
 add_action( 'init', 'build_taxonomies', 0 );
  
 function build_taxonomies() {
-	
+    
 // cusotm tax
     register_taxonomy( 'organization', 'partner_organizations',
-	 array( 
-	'hierarchical' => true, 
-	'label' => 'Organization Type', 
-	'query_var' => true, 
-	'rewrite' => true ,
-	'show_admin_column' => true,
-	'public' => true,
-	'rewrite' => array( 'slug' => 'organization' ),
-	'_builtin' => true
-	) );
-	
+     array( 
+    'hierarchical' => true, 
+    'label' => 'Organization Type', 
+    'query_var' => true, 
+    'rewrite' => true ,
+    'show_admin_column' => true,
+    'public' => true,
+    'rewrite' => array( 'slug' => 'organization' ),
+    '_builtin' => true
+    ) );
+    
 // cusotm tax
     register_taxonomy( 'county', 'partner_organizations',
-	 array( 
-	'hierarchical' => true, 
-	'label' => 'County', 
-	'query_var' => true, 
-	'rewrite' => true ,
-	'show_admin_column' => true,
-	'public' => true,
-	'rewrite' => array( 'slug' => 'county' ),
-	'_builtin' => true
-	) );
+     array( 
+    'hierarchical' => true, 
+    'label' => 'County', 
+    'query_var' => true, 
+    'rewrite' => true ,
+    'show_admin_column' => true,
+    'public' => true,
+    'rewrite' => array( 'slug' => 'county' ),
+    '_builtin' => true
+    ) );
 
 // cusotm tax
     register_taxonomy( 'leadershiptype', 'leadership',
-	 array( 
-	'hierarchical' => true, 
-	'label' => 'Leadership Type', 
-	'query_var' => true, 
-	'rewrite' => true ,
-	'show_admin_column' => true,
-	'public' => true,
-	'rewrite' => array( 'slug' => 'leadershiptype' ),
-	'_builtin' => true
-	) );
+     array( 
+    'hierarchical' => true, 
+    'label' => 'Leadership Type', 
+    'query_var' => true, 
+    'rewrite' => true ,
+    'show_admin_column' => true,
+    'public' => true,
+    'rewrite' => array( 'slug' => 'leadershiptype' ),
+    '_builtin' => true
+    ) );
 
 
 } // End build taxonomies
@@ -490,7 +485,7 @@ function activity_type_columns( $taxonomies ) {
 }
 /*
 
-			OPtions pages
+            OPtions pages
 
 */
 /*if( function_exists('acf_add_options_sub_page') )
@@ -502,34 +497,34 @@ function activity_type_columns( $taxonomies ) {
 
 
 // add additional image sizes
-	add_image_size( 'recipe', 200, 9999 ); //300 pixels wide (and unlimited height)
-	add_image_size( 'homepage', 420, 9999 ); //300 pixels wide (and unlimited height)
+    add_image_size( 'recipe', 200, 9999 ); //300 pixels wide (and unlimited height)
+    add_image_size( 'homepage', 420, 9999 ); //300 pixels wide (and unlimited height)
     add_image_size( 'profile', 350, 350 );
-	
-	// This theme uses wp_nav_menu() in one location.
-	register_nav_menu( 'mhpc', __( 'MHPC Menu', 'twentytwelve' ) );
-	register_nav_menu( 'smat', __( 'SMAT Menu', 'twentytwelve' ) );
+    
+    // This theme uses wp_nav_menu() in one location.
+    register_nav_menu( 'mhpc', __( 'MHPC Menu', 'twentytwelve' ) );
+    register_nav_menu( 'smat', __( 'SMAT Menu', 'twentytwelve' ) );
     register_nav_menu( 'tools', __( 'Tools Menu', 'twentytwelve' ) );
-	register_nav_menu( 'sitemap', __( 'Sitemap', 'twentytwelve' ) );
+    register_nav_menu( 'sitemap', __( 'Sitemap', 'twentytwelve' ) );
 
 
 
-	// This theme uses a custom image size for featured images, displayed on "standard" posts.
-	add_theme_support( 'post-thumbnails' );
-	set_post_thumbnail_size( 624, 9999 ); // Unlimited height, soft crop
-	
+    // This theme uses a custom image size for featured images, displayed on "standard" posts.
+    add_theme_support( 'post-thumbnails' );
+    set_post_thumbnail_size( 624, 9999 ); // Unlimited height, soft crop
+    
 /**
  * Enqueue styles
  */
 function agile_style() {
-	wp_enqueue_style( 'agile-style', get_stylesheet_uri() );
+    wp_enqueue_style( 'agile-style', get_stylesheet_uri() );
 }
 
 add_action( 'wp_enqueue_scripts', 'agile_style' );
-	
-	
+    
+    
 /**
-*			Custom Excerpts 
+*           Custom Excerpts 
 
 //         usage = echo excerpt(25);
 */
@@ -564,14 +559,14 @@ function content($limit) {
 /*-----------------------------------------------------------------------------------*/
 
 function remove_admin_menu_items() {
-	$remove_menu_items = array(__('Comments'));
-	global $menu;
-	end ($menu);
-	while (prev($menu)){
-		$item = explode(' ',$menu[key($menu)][0]);
-		if(in_array($item[0] != NULL?$item[0]:"" , $remove_menu_items)){
-		unset($menu[key($menu)]);}
-	}
+    $remove_menu_items = array(__('Comments'));
+    global $menu;
+    end ($menu);
+    while (prev($menu)){
+        $item = explode(' ',$menu[key($menu)][0]);
+        if(in_array($item[0] != NULL?$item[0]:"" , $remove_menu_items)){
+        unset($menu[key($menu)]);}
+    }
 }
 
 add_action('admin_menu', 'remove_admin_menu_items');
@@ -599,24 +594,24 @@ add_action('admin_menu', 'remove_admin_menu_items');
  * @return string Filtered title.
  */
 function twentytwelve_wp_title( $title, $sep ) {
-	global $paged, $page;
+    global $paged, $page;
 
-	if ( is_feed() )
-		return $title;
+    if ( is_feed() )
+        return $title;
 
-	// Add the site name.
-	$title .= get_bloginfo( 'name' );
+    // Add the site name.
+    $title .= get_bloginfo( 'name' );
 
-	// Add the site description for the home/front page.
-	$site_description = get_bloginfo( 'description', 'display' );
-	if ( $site_description && ( is_home() || is_front_page() ) )
-		$title = "$title $sep $site_description";
+    // Add the site description for the home/front page.
+    $site_description = get_bloginfo( 'description', 'display' );
+    if ( $site_description && ( is_home() || is_front_page() ) )
+        $title = "$title $sep $site_description";
 
-	// Add a page number if necessary.
-	if ( $paged >= 2 || $page >= 2 )
-		$title = "$title $sep " . sprintf( __( 'Page %s', 'twentytwelve' ), max( $paged, $page ) );
+    // Add a page number if necessary.
+    if ( $paged >= 2 || $page >= 2 )
+        $title = "$title $sep " . sprintf( __( 'Page %s', 'twentytwelve' ), max( $paged, $page ) );
 
-	return $title;
+    return $title;
 }
 add_filter( 'wp_title', 'twentytwelve_wp_title', 10, 2 );
 
@@ -636,55 +631,55 @@ if ( ! function_exists( 'twentytwelve_comment' ) ) :
  * @return void
  */
 function twentytwelve_comment( $comment, $args, $depth ) {
-	$GLOBALS['comment'] = $comment;
-	switch ( $comment->comment_type ) :
-		case 'pingback' :
-		case 'trackback' :
-		// Display trackbacks differently than normal comments.
-	?>
-	<li <?php comment_class(); ?> id="comment-<?php comment_ID(); ?>">
-		<p><?php _e( 'Pingback:', 'twentytwelve' ); ?> <?php comment_author_link(); ?> <?php edit_comment_link( __( '(Edit)', 'twentytwelve' ), '<span class="edit-link">', '</span>' ); ?></p>
-	<?php
-			break;
-		default :
-		// Proceed with normal comments.
-		global $post;
-	?>
-	<li <?php comment_class(); ?> id="li-comment-<?php comment_ID(); ?>">
-		<article id="comment-<?php comment_ID(); ?>" class="comment">
-			<header class="comment-meta comment-author vcard">
-				<?php
-					echo get_avatar( $comment, 44 );
-					printf( '<cite><b class="fn">%1$s</b> %2$s</cite>',
-						get_comment_author_link(),
-						// If current post author is also comment author, make it known visually.
-						( $comment->user_id === $post->post_author ) ? '<span>' . __( 'Post author', 'twentytwelve' ) . '</span>' : ''
-					);
-					printf( '<a href="%1$s"><time datetime="%2$s">%3$s</time></a>',
-						esc_url( get_comment_link( $comment->comment_ID ) ),
-						get_comment_time( 'c' ),
-						/* translators: 1: date, 2: time */
-						sprintf( __( '%1$s at %2$s', 'twentytwelve' ), get_comment_date(), get_comment_time() )
-					);
-				?>
-			</header><!-- .comment-meta -->
+    $GLOBALS['comment'] = $comment;
+    switch ( $comment->comment_type ) :
+        case 'pingback' :
+        case 'trackback' :
+        // Display trackbacks differently than normal comments.
+    ?>
+    <li <?php comment_class(); ?> id="comment-<?php comment_ID(); ?>">
+        <p><?php _e( 'Pingback:', 'twentytwelve' ); ?> <?php comment_author_link(); ?> <?php edit_comment_link( __( '(Edit)', 'twentytwelve' ), '<span class="edit-link">', '</span>' ); ?></p>
+    <?php
+            break;
+        default :
+        // Proceed with normal comments.
+        global $post;
+    ?>
+    <li <?php comment_class(); ?> id="li-comment-<?php comment_ID(); ?>">
+        <article id="comment-<?php comment_ID(); ?>" class="comment">
+            <header class="comment-meta comment-author vcard">
+                <?php
+                    echo get_avatar( $comment, 44 );
+                    printf( '<cite><b class="fn">%1$s</b> %2$s</cite>',
+                        get_comment_author_link(),
+                        // If current post author is also comment author, make it known visually.
+                        ( $comment->user_id === $post->post_author ) ? '<span>' . __( 'Post author', 'twentytwelve' ) . '</span>' : ''
+                    );
+                    printf( '<a href="%1$s"><time datetime="%2$s">%3$s</time></a>',
+                        esc_url( get_comment_link( $comment->comment_ID ) ),
+                        get_comment_time( 'c' ),
+                        /* translators: 1: date, 2: time */
+                        sprintf( __( '%1$s at %2$s', 'twentytwelve' ), get_comment_date(), get_comment_time() )
+                    );
+                ?>
+            </header><!-- .comment-meta -->
 
-			<?php if ( '0' == $comment->comment_approved ) : ?>
-				<p class="comment-awaiting-moderation"><?php _e( 'Your comment is awaiting moderation.', 'twentytwelve' ); ?></p>
-			<?php endif; ?>
+            <?php if ( '0' == $comment->comment_approved ) : ?>
+                <p class="comment-awaiting-moderation"><?php _e( 'Your comment is awaiting moderation.', 'twentytwelve' ); ?></p>
+            <?php endif; ?>
 
-			<section class="comment-content comment">
-				<?php comment_text(); ?>
-				<?php edit_comment_link( __( 'Edit', 'twentytwelve' ), '<p class="edit-link">', '</p>' ); ?>
-			</section><!-- .comment-content -->
+            <section class="comment-content comment">
+                <?php comment_text(); ?>
+                <?php edit_comment_link( __( 'Edit', 'twentytwelve' ), '<p class="edit-link">', '</p>' ); ?>
+            </section><!-- .comment-content -->
 
-			<div class="reply">
-				<?php comment_reply_link( array_merge( $args, array( 'reply_text' => __( 'Reply', 'twentytwelve' ), 'after' => ' <span>&darr;</span>', 'depth' => $depth, 'max_depth' => $args['max_depth'] ) ) ); ?>
-			</div><!-- .reply -->
-		</article><!-- #comment-## -->
-	<?php
-		break;
-	endswitch; // end comment_type check
+            <div class="reply">
+                <?php comment_reply_link( array_merge( $args, array( 'reply_text' => __( 'Reply', 'twentytwelve' ), 'after' => ' <span>&darr;</span>', 'depth' => $depth, 'max_depth' => $args['max_depth'] ) ) ); ?>
+            </div><!-- .reply -->
+        </article><!-- #comment-## -->
+    <?php
+        break;
+    endswitch; // end comment_type check
 }
 endif;
 
@@ -692,70 +687,70 @@ endif;
 
 function pagi_posts_nav() {
 
-	if( is_singular() )
-		return;
+    if( is_singular() )
+        return;
 
-	global $wp_query;
+    global $wp_query;
 
-	/** Stop execution if there's only 1 page */
-	if( $wp_query->max_num_pages <= 1 )
-		return;
+    /** Stop execution if there's only 1 page */
+    if( $wp_query->max_num_pages <= 1 )
+        return;
 
-	$paged = get_query_var( 'paged' ) ? absint( get_query_var( 'paged' ) ) : 1;
-	$max   = intval( $wp_query->max_num_pages );
+    $paged = get_query_var( 'paged' ) ? absint( get_query_var( 'paged' ) ) : 1;
+    $max   = intval( $wp_query->max_num_pages );
 
-	/**	Add current page to the array */
-	if ( $paged >= 1 )
-		$links[] = $paged;
+    /** Add current page to the array */
+    if ( $paged >= 1 )
+        $links[] = $paged;
 
-	/**	Add the pages around the current page to the array */
-	if ( $paged >= 3 ) {
-		$links[] = $paged - 1;
-		$links[] = $paged - 2;
-	}
+    /** Add the pages around the current page to the array */
+    if ( $paged >= 3 ) {
+        $links[] = $paged - 1;
+        $links[] = $paged - 2;
+    }
 
-	if ( ( $paged + 2 ) <= $max ) {
-		$links[] = $paged + 2;
-		$links[] = $paged + 1;
-	}
+    if ( ( $paged + 2 ) <= $max ) {
+        $links[] = $paged + 2;
+        $links[] = $paged + 1;
+    }
 
-	echo '<div class="navigation"><ul>' . "\n";
+    echo '<div class="navigation"><ul>' . "\n";
 
-	/**	Previous Post Link */
-	if ( get_previous_posts_link() )
-		printf( '<li>%s</li>' . "\n", get_previous_posts_link() );
+    /** Previous Post Link */
+    if ( get_previous_posts_link() )
+        printf( '<li>%s</li>' . "\n", get_previous_posts_link() );
 
-	/**	Link to first page, plus ellipses if necessary */
-	if ( ! in_array( 1, $links ) ) {
-		$class = 1 == $paged ? ' class="active"' : '';
+    /** Link to first page, plus ellipses if necessary */
+    if ( ! in_array( 1, $links ) ) {
+        $class = 1 == $paged ? ' class="active"' : '';
 
-		printf( '<li%s><a href="%s">%s</a></li>' . "\n", $class, esc_url( get_pagenum_link( 1 ) ), '1' );
+        printf( '<li%s><a href="%s">%s</a></li>' . "\n", $class, esc_url( get_pagenum_link( 1 ) ), '1' );
 
-		if ( ! in_array( 2, $links ) )
-			echo '<li>…</li>';
-	}
+        if ( ! in_array( 2, $links ) )
+            echo '<li>…</li>';
+    }
 
-	/**	Link to current page, plus 2 pages in either direction if necessary */
-	sort( $links );
-	foreach ( (array) $links as $link ) {
-		$class = $paged == $link ? ' class="active"' : '';
-		printf( '<li%s><a href="%s">%s</a></li>' . "\n", $class, esc_url( get_pagenum_link( $link ) ), $link );
-	}
+    /** Link to current page, plus 2 pages in either direction if necessary */
+    sort( $links );
+    foreach ( (array) $links as $link ) {
+        $class = $paged == $link ? ' class="active"' : '';
+        printf( '<li%s><a href="%s">%s</a></li>' . "\n", $class, esc_url( get_pagenum_link( $link ) ), $link );
+    }
 
-	/**	Link to last page, plus ellipses if necessary */
-	if ( ! in_array( $max, $links ) ) {
-		if ( ! in_array( $max - 1, $links ) )
-			echo '<li>…</li>' . "\n";
+    /** Link to last page, plus ellipses if necessary */
+    if ( ! in_array( $max, $links ) ) {
+        if ( ! in_array( $max - 1, $links ) )
+            echo '<li>…</li>' . "\n";
 
-		$class = $paged == $max ? ' class="active"' : '';
-		printf( '<li%s><a href="%s">%s</a></li>' . "\n", $class, esc_url( get_pagenum_link( $max ) ), $max );
-	}
+        $class = $paged == $max ? ' class="active"' : '';
+        printf( '<li%s><a href="%s">%s</a></li>' . "\n", $class, esc_url( get_pagenum_link( $max ) ), $max );
+    }
 
-	/**	Next Post Link */
-	if ( get_next_posts_link() )
-		printf( '<li>%s</li>' . "\n", get_next_posts_link() );
+    /** Next Post Link */
+    if ( get_next_posts_link() )
+        printf( '<li>%s</li>' . "\n", get_next_posts_link() );
 
-	echo '</ul></div>' . "\n";
+    echo '</ul></div>' . "\n";
 
 }
 // end pagination
@@ -766,21 +761,21 @@ function pagi_posts_nav() {
 if( function_exists('acf_set_options_page_menu') )
 {
     //acf_set_options_page_menu( __('Theme Options') );
-	
-	
-	
-	
-	
+    
+    
+    
+    
+    
 }
 
 
    
 function my_acf_options_page_settings( $settings )
 {
-	$settings['title'] = 'Theme Options';
-	$settings['pages'] = array('Global Options', 'Alerts', 'Resources', 'Contact');
+    $settings['title'] = 'Theme Options';
+    $settings['pages'] = array('Global Options', 'Alerts', 'Resources', 'Contact');
  
-	return $settings;
+    return $settings;
 }
  
 add_filter('acf/options_page/settings', 'my_acf_options_page_settings');
@@ -853,16 +848,16 @@ function change_post_object_label() {
     }
     add_action( 'init', 'change_post_object_label' );
     add_action( 'admin_menu', 'change_post_menu_label' );
-	
-// hide News and Events for non adimins	
+    
+// hide News and Events for non adimins 
 add_action( 'admin_menu', 'my_remove_menu_pages' );
 function my_remove_menu_pages() {
-	
-	if(!current_user_can('edit_posts')) {
-		remove_menu_page('edit.php');	
-	}
+    
+    if(!current_user_can('edit_posts')) {
+        remove_menu_page('edit.php');   
+    }
 }
-	
+    
 /*function smat_add_capability() {
     // gets the author role
     $role = get_role( 'smat' );
@@ -879,7 +874,7 @@ function coalition_add_capability() {
     $role->add_cap( 'coalition_donothing' ); 
 }
 add_action( 'admin_init', 'coalition_add_capability');
-	
+    
 // Redirects for registration
 function ac_my_registration_redirect() {
     return home_url( '/registration/success' );
@@ -889,33 +884,33 @@ add_filter( 'registration_redirect', 'ac_my_registration_redirect' );
 // Redirects for roles
 function ac_my_role_redirect() {
     if(current_user_can('smat_donothing')) {
-		
-		return home_url( '/mhpc/what-we-do' );
-	
-	} elseif(current_user_can('coalition_donothing')) {
-		
-		return home_url( '/mhpc/' );
-		
-	}
+        
+        return home_url( '/mhpc/what-we-do' );
+    
+    } elseif(current_user_can('coalition_donothing')) {
+        
+        return home_url( '/mhpc/' );
+        
+    }
 }
 add_filter( 'login_redirect', 'ac_my_role_redirect' );*/
 
 
 
 /*function acmy_login_redirect( $redirect_to, $request, $user ) {
-	//is there a user to check?
-	global $user;
-	if ( isset( $user->roles ) && is_array( $user->roles ) ) {
-		//check for smats
-		if ( in_array( 'smat', $user->roles ) ) {
-			// redirect them to the default place
-			return $redirect_to;
-		} else {
-			return home_url();
-		}
-	} else {
-		return $redirect_to;
-	}
+    //is there a user to check?
+    global $user;
+    if ( isset( $user->roles ) && is_array( $user->roles ) ) {
+        //check for smats
+        if ( in_array( 'smat', $user->roles ) ) {
+            // redirect them to the default place
+            return $redirect_to;
+        } else {
+            return home_url();
+        }
+    } else {
+        return $redirect_to;
+    }
 }
 
 add_filter( 'login_redirect', 'acmy_login_redirect', 10, 3 );*/
@@ -944,57 +939,52 @@ add_action( 'admin_head-profile.php', 'cor_profile_subject_start' );
 add_action( 'admin_footer-profile.php', 'cor_profile_subject_end' );
 
 add_action( 'admin_bar_menu', 'remove_wp_logo', 999 );
-function remove_wp_logo( $wp_admin_bar ) {
-	$wp_admin_bar->remove_node( 'wp-logo' );
-	//$wp_admin_bar->remove_node( 'site-name' );
 
-    $node = $wp_admin_bar->get_node('view-site');
-    //Change target
-    $node->meta['target'] = '_blank';
-    //Update Node.
-    $wp_admin_bar->add_node($node);
+function remove_wp_logo( $wp_admin_bar ) {
+    $wp_admin_bar->remove_node( 'wp-logo' );
+    $wp_admin_bar->remove_node( 'site-name' );
 }
 
-// class description_walker extends Walker_Nav_Menu
-// {
-//       function start_el(&$output, $item, $depth, $args)
-//       {
-//            global $wp_query;
-//            $indent = ( $depth ) ? str_repeat( "\t", $depth ) : '';
+class description_walker extends Walker_Nav_Menu
+{
+      function start_el(&$output, $item, $depth, $args)
+      {
+           global $wp_query;
+           $indent = ( $depth ) ? str_repeat( "\t", $depth ) : '';
 
-//            $class_names = $value = '';
+           $class_names = $value = '';
 
-//            $classes = empty( $item->classes ) ? array() : (array) $item->classes;
+           $classes = empty( $item->classes ) ? array() : (array) $item->classes;
 
-//            $class_names = join( ' ', apply_filters( 'nav_menu_css_class', array_filter( $classes ), $item ) );
-//            $class_names = ' class="'. esc_attr( $class_names ) . '"';
+           $class_names = join( ' ', apply_filters( 'nav_menu_css_class', array_filter( $classes ), $item ) );
+           $class_names = ' class="'. esc_attr( $class_names ) . '"';
 
-//            $output .= $indent . '<li id="menu-item-'. $item->ID . '"' . $value . $class_names .'onClick="return true">';
+           $output .= $indent . '<li id="menu-item-'. $item->ID . '"' . $value . $class_names .'onClick="return true">';
 
-//            $attributes  = ! empty( $item->attr_title ) ? ' title="'  . esc_attr( $item->attr_title ) .'"' : '';
-//            $attributes .= ! empty( $item->target )     ? ' target="' . esc_attr( $item->target     ) .'"' : '';
-//            $attributes .= ! empty( $item->xfn )        ? ' rel="'    . esc_attr( $item->xfn        ) .'"' : '';
-//            $attributes .= ! empty( $item->url )        ? ' href="'   . esc_attr( $item->url        ) .'"' : '';
+           $attributes  = ! empty( $item->attr_title ) ? ' title="'  . esc_attr( $item->attr_title ) .'"' : '';
+           $attributes .= ! empty( $item->target )     ? ' target="' . esc_attr( $item->target     ) .'"' : '';
+           $attributes .= ! empty( $item->xfn )        ? ' rel="'    . esc_attr( $item->xfn        ) .'"' : '';
+           $attributes .= ! empty( $item->url )        ? ' href="'   . esc_attr( $item->url        ) .'"' : '';
 
-//            $prepend = '';
-//            $append = '';
-//            $description  = ! empty( $item->description ) ? '<span>'.esc_attr( $item->description ).'</span>' : '';
+           $prepend = '';
+           $append = '';
+           $description  = ! empty( $item->description ) ? '<span>'.esc_attr( $item->description ).'</span>' : '';
 
-//            if($depth != 0)
-//            {
-//                      $description = $append = $prepend = "";
-//            }
+           if($depth != 0)
+           {
+                     $description = $append = $prepend = "";
+           }
 
-//             $item_output = $args->before;
-//             $item_output .= '<a'. $attributes .'onClick="return true">';
-//             $item_output .= $args->link_before .$prepend.apply_filters( 'the_title', $item->title, $item->ID ).$append;
-//             $item_output .= $description.$args->link_after;
-//             $item_output .= '</a>';
-//             $item_output .= $args->after;
+            $item_output = $args->before;
+            $item_output .= '<a'. $attributes .'onClick="return true">';
+            $item_output .= $args->link_before .$prepend.apply_filters( 'the_title', $item->title, $item->ID ).$append;
+            $item_output .= $description.$args->link_after;
+            $item_output .= '</a>';
+            $item_output .= $args->after;
 
-//             $output .= apply_filters( 'walker_nav_menu_start_el', $item_output, $item, $depth, $args );
-//             }
-// }
+            $output .= apply_filters( 'walker_nav_menu_start_el', $item_output, $item, $depth, $args );
+            }
+}
 /**
  * Register our sidebars and widgetized areas.
  *
@@ -1021,7 +1011,7 @@ function acc_widgets_init() {
 add_action( 'widgets_init', 'acc_widgets_init' );
 
 
-// Change Link
+/* Change WP Logo Link and Name */
 function loginpage_custom_link() {
     return get_site_url();
 }
