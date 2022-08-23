@@ -45,7 +45,7 @@ get_header(); ?>
              <div class="map-words">
                 
              	<ul>
-                	<li><a class='inline' href="#burke" id="countyburke">Burke</a></li>
+                	<!-- <li><a class='inline' href="#burke" id="countyburke">Burke</a></li> -->
                     <li><a class='inline' href="#cleveland" alt="cleveland" >Cleveland</a></li>
                     <li><a class='inline' href="#catawba" alt="catawba" >Catawba</a></li>
                     <li><a class='inline' href="#lincoln" alt="lincoln" >Lincoln</a></li>
@@ -83,7 +83,7 @@ get_header(); ?>
              <div class="map-words-container">
              <div class="map-words">
                 <ul>
-                    <li><a class='inline' href="#burke" id="countyburke">Burke</a></li>
+                    <!-- <li><a class='inline' href="#burke" id="countyburke">Burke</a></li> -->
                     <li><a class='inline' href="#cleveland" alt="cleveland" >Cleveland</a></li>
                     <li><a class='inline' href="#catawba" alt="catawba" >Catawba</a></li>
                     <li><a class='inline' href="#lincoln" alt="lincoln" >Lincoln</a></li>
@@ -118,7 +118,7 @@ get_header(); ?>
              </div> <!-- map words container -->
              
              <div class="map-image">
-             		<img src="<?php bloginfo('template_url'); ?>/images/map2.png" usemap="#Map" id="map"/>
+             		<img src="<?php bloginfo('template_url'); ?>/images/map3.png" usemap="#Map" id="map"/>
              		<?php get_template_part('includes/map-cords'); ?>
              </div><!-- map image -->
              </div><!-- states container -->   
